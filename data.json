@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "category": "Anime",
+    "title": "Neon City Guardian",
+    "image": "images/anime_girl_city_1773857209604.png",
+    "prompt": "Anime style illustration of a young girl standing in a futuristic cyberpunk city, neon lights, highly detailed, 4k"
+  },
+  {
+    "id": 2,
+    "category": "DP",
+    "title": "Mysterious Glow",
+    "image": "images/cool_dp_avatar_1773857228511.png",
+    "prompt": "A cool profile picture portrait of a mysterious person wearing a hoodie, glowing eyes, synthwave aesthetic, 8k resolution"
+  },
+  {
+    "id": 3,
+    "category": "Couple",
+    "title": "Sunset Romance",
+    "image": "images/romantic_couple_sunset_1773857246895.png",
+    "prompt": "A romantic couple holding hands on a beach during a vibrant golden hour sunset, cinematic lighting, photorealistic"
+  },
+  {
+    "id": 4,
+    "category": "Gym",
+    "title": "Shadow Lifting",
+    "image": "images/gym_workout_motivation_1773857264056.png",
+    "prompt": "A muscular athlete working out in a dark gritty gym, heavy shadows, dramatic spot lighting, photorealistic heavy lifting"
+  },
+  {
+    "id": 5,
+    "category": "Baby Boy",
+    "title": "Little Astronaut",
+    "image": "images/cool_dp_avatar_1773857228511.png",
+    "prompt": "An adorable baby boy wearing an oversized astronaut helmet, playing with glowing stars in his bedroom, pixar style animation, 4k"
+  },
+  {
+    "id": 6,
+    "category": "Baby Girl",
+    "title": "Fairy Princess",
+    "image": "images/anime_girl_city_1773857209604.png",
+    "prompt": "A cute baby girl with tiny glowing fairy wings, sitting on a giant mushroom in a magical forest, highly detailed, soft lighting"
+  },
+  {
+    "id": 7,
+    "category": "Men",
+    "title": "Dapper Gentleman",
+    "image": "images/cool_dp_avatar_1773857228511.png",
+    "prompt": "Portrait of a handsome man in a sharp tailored vintage suit, smoking a cigar in a dimly lit 1920s speakeasy, cinematic lighting, 8k"
+  },
+  {
+    "id": 8,
+    "category": "Women",
+    "title": "Ethereal Goddess",
+    "image": "images/romantic_couple_sunset_1773857246895.png",
+    "prompt": "A breathtaking portrait of a woman wearing a dress made of glowing starlight, floating gracefully in the cosmos, hyper-realistic photography"
+  },
+  {
+    "id": 9,
+    "category": "Art",
+    "title": "Abstract Swirls",
+    "image": "images/anime_girl_city_1773857209604.png",
+    "prompt": "An abstract masterpiece consisting of swirling oil paint in neon blue, hot pink, and metallic gold, rich texture, heavy impasto style"
+  },
+  {
+    "id": 10,
+    "category": "Sci-Fi",
+    "title": "Cyberpunk Outpost",
+    "image": "images/gym_workout_motivation_1773857264056.png",
+    "prompt": "A solitary glowing outpost on a desolate alien planet, twin moons in the sky, heavy fog, high-tech machinery, unreal engine 5 render"
+  },
+  {
+    "id": 11,
+    "category": "Baby Boy",
+    "title": "Dinosaur Rider",
+    "image": "images/romantic_couple_sunset_1773857246895.png",
+    "prompt": "A cute toddler boy riding a friendly triceratops through a prehistoric jungle, bright and colorful, disney animation style"
+  },
+  {
+    "id": 12,
+    "category": "Baby Girl",
+    "title": "Mermaid Splash",
+    "image": "images/anime_girl_city_1773857209604.png",
+    "prompt": "A cheerful baby girl with a tiny mermaid tail splashing in a crystal clear magical pool, surrounded by glowing fish, 4k"
+  },
+  {
+    "id": 13,
+    "category": "Men",
+    "title": "Viking Warrior",
+    "image": "images/gym_workout_motivation_1773857264056.png",
+    "prompt": "Epic shot of a fierce viking warrior holding a glowing icy axe during a snowstorm, war paint, hyper-detailed, dramatic cinematic lighting"
+  },
+  {
+    "id": 14,
+    "category": "Women",
+    "title": "Sci-Fi Assassin",
+    "image": "images/cool_dp_avatar_1773857228511.png",
+    "prompt": "A deadly female assassin wearing stealth futuristic cyberpunk gear, sitting on the edge of a skyscraper overlooking neon tokyo, hyper-realistic"
+  },
+  {
+    "id": 15,
+    "category": "Art",
+    "title": "Liquid Gold",
+    "image": "images/romantic_couple_sunset_1773857246895.png",
+    "prompt": "Macro photography of liquid metal pouring over a sphere, metallic reflection, obsidian and pure gold, 8k resolution, trending on artstation"
+  },
+  {
+    "id": 16,
+    "category": "Cinematic",
+    "title": "Desert Dune",
+    "image": "images/cool_dp_avatar_1773857228511.png",
+    "prompt": "Vast sand dunes from a cinematic dune-style movie, spice floating in the air, golden hour, immense scale, ultra-wide shot"
+  },
+  {
+    "id": 17,
+    "category": "Fantasy",
+    "title": "Floating Islands",
+    "image": "images/anime_girl_city_1773857209604.png",
+    "prompt": "Majestic floating islands with waterfalls pouring into the clouds, glowing crystals, soaring dragons, high fantasy concept art"
+  },
+  {
+    "id": 18,
+    "category": "Logo Design",
+    "title": "Tech Startup Logo",
+    "image": "images/romantic_couple_sunset_1773857246895.png",
+    "prompt": "Minimalist modern app logo consisting of an overlapping abstract geometric shape, teal and purple gradient, dark background, vector style"
+  },
+  {
+    "id": 19,
+    "category": "UI/UX",
+    "title": "Smart Home App",
+    "image": "images/gym_workout_motivation_1773857264056.png",
+    "prompt": "A beautiful UI dashboard design for a smart home application, glassmorphism elements, dark mode interface, elegant typography"
+  },
+  {
+    "id": 20,
+    "category": "Cars",
+    "title": "Neon Supercar",
+    "image": "images/anime_girl_city_1773857209604.png",
+    "prompt": "A sleek futuristic supercar drifting on a wet neon-lit city street at night, heavy rain, reflections on asphalt, action shot"
+  },
+  {
+    "id": 21,
+    "category": "Pets",
+    "title": "Samurai Cat",
+    "image": "images/cool_dp_avatar_1773857228511.png",
+    "prompt": "A fluffy orange cat wearing traditional intricate samurai armor, holding a tiny katana, serious expression, highly detailed fur, rim lighting"
+  },
+  {
+    "id": 22,
+    "category": "Horror",
+    "title": "Abandoned Asylum",
+    "image": "images/gym_workout_motivation_1773857264056.png",
+    "prompt": "A terrifying abandoned asylum corridor, flickering fluorescent lights, twisted silhouettes, extremely dark and gritty, photorealistic horror"
+  },
+  {
+    "id": 23,
+    "category": "Minimalism",
+    "title": "Zen Garden",
+    "image": "images/romantic_couple_sunset_1773857246895.png",
+    "prompt": "A simple minimalist zen garden, one smooth black stone resting on raked white sand, soft studio lighting, perfectly balanced composition"
+  },
+  {
+    "id": 24,
+    "category": "Cybernetics",
+    "title": "Robot Hand",
+    "image": "images/anime_girl_city_1773857209604.png",
+    "prompt": "Extreme macro close-up of a highly intricate robotic hand holding a glowing green microchip, hyper-detailed mechanical parts, 8k"
+  },
+  {
+    "id": 25,
+    "category": "Tattoos",
+    "title": "Viking Sleeve",
+    "image": "images/cool_dp_avatar_1773857228511.png",
+    "prompt": "A detailed full arm sleeve tattoo design featuring norse mythology, a wolf and runes, black and grey shading, clean linework style"
+  }
+]
