@@ -15,34 +15,34 @@ async function init() {
         const response = await fetch('data.json');
         if (!response.ok) throw new Error('Failed to load prompts.');
         allPrompts = await response.json();
-        
+
         // Render Dynamic Navigation
         renderCategories();
-        
+
         // Handle Routing
         window.addEventListener('hashchange', handleRoute);
-        
+
         // Handle Search
         const searchInput = document.getElementById('search-input');
-        if(searchInput) {
+        if (searchInput) {
             searchInput.addEventListener('input', (e) => {
                 searchQuery = e.target.value.toLowerCase();
-                if(window.location.hash.slice(1).startsWith('prompt/')) {
+                if (window.location.hash.slice(1).startsWith('prompt/')) {
                     window.location.hash = ''; // Go back to grid when typing search
                 } else {
                     renderHome(currentCategory);
                 }
             });
-            
+
             // Global keybind for search (/)
             window.addEventListener('keydown', (e) => {
-                if(e.key === '/' && document.activeElement !== searchInput) {
+                if (e.key === '/' && document.activeElement !== searchInput) {
                     e.preventDefault();
                     searchInput.focus();
                 }
             });
         }
-        
+
         handleRoute(); // initial render
     } catch (error) {
         appContainer.innerHTML = `<div style="text-align:center; padding: 2rem; color: #ff5252;">
@@ -57,12 +57,12 @@ async function init() {
 function handleRoute() {
     const hash = window.location.hash.slice(1);
     lucide.createIcons(); // Initialize icons
-    
+
     // Update nav active states
     document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
-        if(hash && href === `#${hash}`) {
+        if (hash && href === `#${hash}`) {
             link.classList.add('active');
         } else if (!hash && href === '#') {
             link.classList.add('active');
@@ -80,7 +80,7 @@ function handleRoute() {
         const id = parseInt(hash.split('/')[1]);
         renderDetail(id);
     }
-    
+
     // Re-init lucide icons for newly injected HTML
     lucide.createIcons();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -108,12 +108,12 @@ function renderHome(category = 'All') {
     if (category !== 'All') {
         filtered = filtered.filter(p => p.category === category);
     }
-    
+
     if (searchQuery.trim() !== '') {
         const query = searchQuery.toLowerCase();
-        filtered = filtered.filter(p => 
-            p.prompt.toLowerCase().includes(query) || 
-            p.title.toLowerCase().includes(query) || 
+        filtered = filtered.filter(p =>
+            p.prompt.toLowerCase().includes(query) ||
+            p.title.toLowerCase().includes(query) ||
             p.category.toLowerCase().includes(query)
         );
     }
@@ -125,9 +125,9 @@ function renderHome(category = 'All') {
     `;
 
     const promoBanners = [
-        { text: "Get exclusive AI art commands directly on your feed!", cta: "Follow @URAB" },
-        { text: "Exploring the art of motion. Check out our sister page!", cta: "Follow AB Motion Labs" },
-        { text: "Discover your inner zen. Check out our sister page!", cta: "Follow Adaptive Balance" }
+        { text: "⚡ Don’t miss trending AI prompts going viral daily!", cta: "Follow URAB" },
+        { text: "🎬 Smooth edits & motion design that stand out", cta: "Follow AB Motion Labs" },
+        { text: "Life, mindset & relatable content — all in one feed", cta: "Follow Adaptive Balance" }
     ];
     let bannerIndex = 0;
 
@@ -148,7 +148,7 @@ function renderHome(category = 'All') {
                 </div>
             `;
         }
-        
+
         html += `
             <a href="#prompt/${prompt.id}" class="prompt-card">
                 <div class="card-image-wrapper">
@@ -163,7 +163,7 @@ function renderHome(category = 'All') {
     });
 
     html += `</div>`;
-    
+
     if (filtered.length >= 4) {
         html += `
             <div class="more-container">
@@ -178,7 +178,7 @@ function renderHome(category = 'All') {
 // Render Detail Page
 function renderDetail(id) {
     const prompt = allPrompts.find(p => p.id === id);
-    
+
     if (!prompt) {
         appContainer.innerHTML = `<h2 style="text-align:center">Prompt not found</h2>`;
         return;
@@ -215,7 +215,7 @@ function renderDetail(id) {
                     <span class="pro-badge" style="background: linear-gradient(135deg, #f09433, #dc2743, #bc1888);">📸 IG</span>
                     <span>Love this prompt? We post new ones every single day!</span>
                 </div>
-                <a href="https://instagram.com" target="_blank" class="btn-upgrade">Follow @URAB</a>
+                <a href="https://www.instagram.com/urabindia/" target="_blank" class="btn-upgrade">Follow @URAB</a>
             </div>
         </div>
 
@@ -224,7 +224,7 @@ function renderDetail(id) {
     `;
 
     related.forEach((rel) => {
-         html += `
+        html += `
             <a href="#prompt/${rel.id}" class="prompt-card">
                 <div class="card-image-wrapper">
                     <img src="${rel.image}" alt="${rel.title}" class="card-image" loading="lazy">
@@ -243,13 +243,13 @@ function renderDetail(id) {
 }
 
 // Utility: Copy to Clipboard
-window.copyPrompt = function(text, btnElement) {
+window.copyPrompt = function (text, btnElement) {
     navigator.clipboard.writeText(text).then(() => {
         const originalHtml = btnElement.innerHTML;
         btnElement.innerHTML = `<i data-lucide="check"></i> Copied!`;
         btnElement.classList.add('copied');
         lucide.createIcons();
-        
+
         setTimeout(() => {
             btnElement.innerHTML = originalHtml;
             btnElement.classList.remove('copied');
@@ -279,7 +279,7 @@ if (canvas) {
     const particles = [];
     const particleCount = 70; // Adjust density
 
-    for(let i = 0; i < particleCount; i++) {
+    for (let i = 0; i < particleCount; i++) {
         // Mix of secondary theme colors
         const colors = ['rgba(123, 97, 255, 0.6)', 'rgba(255, 97, 166, 0.6)', 'rgba(97, 211, 255, 0.6)'];
         particles.push({
@@ -300,8 +300,8 @@ if (canvas) {
             p.y += p.dy;
 
             // Bounce off edges
-            if(p.x < 0 || p.x > width) p.dx *= -1;
-            if(p.y < 0 || p.y > height) p.dy *= -1;
+            if (p.x < 0 || p.x > width) p.dx *= -1;
+            if (p.y < 0 || p.y > height) p.dy *= -1;
 
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
@@ -309,15 +309,15 @@ if (canvas) {
             ctx.fill();
 
             // Connect lines
-            for(let j = i + 1; j < particles.length; j++) {
+            for (let j = i + 1; j < particles.length; j++) {
                 const p2 = particles[j];
                 const dx = p.x - p2.x;
                 const dy = p.y - p2.y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
 
-                if(dist < 120) {
+                if (dist < 120) {
                     ctx.beginPath();
-                    ctx.strokeStyle = `rgba(123, 97, 255, ${0.15 - dist/800})`;
+                    ctx.strokeStyle = `rgba(123, 97, 255, ${0.15 - dist / 800})`;
                     ctx.lineWidth = 0.5;
                     ctx.moveTo(p.x, p.y);
                     ctx.lineTo(p2.x, p2.y);
