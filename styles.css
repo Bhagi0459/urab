@@ -162,6 +162,34 @@ a {
     color: var(--text-muted);
     width: 18px; height: 18px;
 }
+
+/* AdSense Styling */
+.adsense-container {
+    display: none; /* Hide until ready to enable */
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    overflow: hidden;
+}
+
+.ad-placeholder {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed var(--surface-border);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.grid-ad {
+    grid-column: 1 / -1;
+    margin: 1rem 0;
+}
 #search-input {
     background: transparent;
     border: none;
@@ -273,6 +301,72 @@ a {
     margin-bottom: 0.5rem;
 }
 
+/* Quick Copy Button */
+.quick-copy {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: var(--primary-color);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all var(--transition-snappy);
+    box-shadow: 0 4px 15px rgba(123, 97, 255, 0.4);
+    z-index: 5;
+    border: none;
+    cursor: pointer;
+}
+
+.prompt-card:hover .quick-copy {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.quick-copy:hover {
+    background: var(--primary-hover);
+    transform: scale(1.1) !important;
+}
+
+.quick-copy.copied {
+    background: var(--success);
+    width: auto;
+    padding: 0 10px;
+    border-radius: 20px;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 5rem 1.5rem;
+    background: var(--surface-color);
+    border: 1px dashed var(--surface-border);
+    border-radius: 20px;
+}
+
+.empty-state .lucide {
+    width: 60px;
+    height: 60px;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    opacity: 0.3;
+}
+
+.empty-state h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.empty-state p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
 /* Detail View */
 .detail-view {
     display: grid;
@@ -287,6 +381,9 @@ a {
     overflow: hidden;
     border: 1px solid var(--surface-border);
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    align-self: start;
+    position: sticky;
+    top: 6rem;
 }
 
 .detail-image {
@@ -327,8 +424,8 @@ a {
 }
 
 .prompt-text {
-    font-family: monospace;
-    color: var(--text-muted);
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--text-primary);
     font-size: 1rem;
     line-height: 1.6;
     word-break: break-word;
@@ -371,9 +468,11 @@ a {
 }
 
 .banner-content {
-    background: linear-gradient(145deg, rgba(123, 97, 255, 0.05), rgba(0, 0, 0, 0.4));
-    border: 1px solid rgba(123, 97, 255, 0.3);
-    box-shadow: 0 0 20px rgba(123, 97, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     color: var(--text-primary);
     min-height: 80px;
     width: 100%;
@@ -382,10 +481,41 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
-    border-radius: 12px;
+    border-radius: 20px;
     gap: 1.5rem;
     position: relative;
     overflow: hidden;
+    transition: var(--transition-snappy);
+}
+
+.banner-content:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.01);
+}
+
+/* Glass Shimmer Animation for Banner */
+.banner-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    animation: shimmerSwipe 6s infinite;
+}
+
+@keyframes shimmerSwipe {
+    0% { left: -150%; }
+    30% { left: 150%; }
+    100% { left: 150%; }
 }
 
 .banner-text {
@@ -397,13 +527,43 @@ a {
 }
 
 .pro-badge {
-    background: linear-gradient(135deg, #ff61a6, var(--primary-color));
+    background: var(--primary-color);
     color: white;
-    padding: 0.2rem 0.6rem;
-    border-radius: 6px;
-    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pro-badge .lucide {
+    width: 14px;
+    height: 14px;
+    stroke-width: 3px;
+}
+
+.ig-glass-badge {
+    background: linear-gradient(135deg, #f09433, #dc2743, #bc1888, #f09433);
+    background-size: 300% 300%;
+    animation: gradientFlow 4s ease infinite;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ig-glass-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px 8px 0 0;
 }
 
 .btn-upgrade {
@@ -536,6 +696,39 @@ footer {
     color: var(--text-muted);
 }
 
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: var(--transition-snappy);
+}
+
+.footer-links a:hover {
+    color: var(--text-primary);
+}
+
+.footer-contact {
+    margin: 1.5rem 0 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.footer-contact a {
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: var(--transition-snappy);
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
 .copyright {
     margin-top: 2rem;
     font-size: 0.85rem;
@@ -559,6 +752,65 @@ footer {
     background-color: var(--bg-color);
 }
 
+/* Instructions Card */
+.instructions-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--surface-border);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    backdrop-filter: blur(10px);
+}
+
+.instructions-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-primary);
+}
+
+.instruction-steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.instruction-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+}
+
+.step-number {
+    background: var(--primary-color);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(123, 97, 255, 0.3);
+}
+
+.step-text {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.step-text strong {
+    color: var(--text-primary);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .nav-container {
@@ -577,8 +829,48 @@ footer {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
+    .detail-image-wrapper {
+        position: static !important;
+    }
     
     .detail-title {
         font-size: 2rem;
     }
+}
+
+/* Static Pages (About, Privacy, etc) */
+.static-page {
+    max-width: 800px;
+    margin: 4rem auto;
+    line-height: 1.8;
+    animation: fadeIn 0.5s ease;
+}
+
+.static-page h1 {
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    background: linear-gradient(135deg, #fff, var(--text-muted));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.static-page h2 {
+    font-size: 1.6rem;
+    margin: 2.5rem 0 1rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.static-page p, .static-page li {
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.static-page ul {
+    margin-left: 1.5rem;
+    margin-bottom: 2rem;
 }

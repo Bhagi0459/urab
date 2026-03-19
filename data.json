@@ -1,177 +1,37 @@
 [
   {
     "id": 1,
-    "category": "Anime",
-    "title": "Neon City Guardian",
-    "image": "images/anime_girl_city_1773857209604.png",
-    "prompt": "Anime style illustration of a young girl standing in a futuristic cyberpunk city, neon lights, highly detailed, 4k"
+    "category": "Couple",
+    "title": "Candid Cinematic Full-Body Shot",
+    "image": "images/1.png",
+    "prompt": "Use the provided image as a strong identity reference for both individuals, strictly preserving their exact facial features, skin tone, and likeness without alteration; create a cinematic golden hour portrait of the same romantic couple walking arm-in-arm against a modern dark grey wall, the man wearing a dark blue button-down shirt and black trousers, the woman wearing a powder pink translucent saree with delicate gold embroidery and holding a bouquet of pale pink roses, both expressing natural warmth and subtle smiles, soft warm side lighting with golden hour glow, Leica 35mm lens at f/1.8, shallow depth of field, soft bokeh background, elegant composition, high-resolution, ultra-realistic details, cinematic color grading with a refined aesthetic."
   },
   {
     "id": 2,
-    "category": "DP",
-    "title": "Mysterious Glow",
-    "image": "images/cool_dp_avatar_1773857228511.png",
-    "prompt": "A cool profile picture portrait of a mysterious person wearing a hoodie, glowing eyes, synthwave aesthetic, 8k resolution"
+    "category": "Couple",
+    "title": "Cinematic Golden Hour Portrait",
+    "image": "images/2.png",
+    "prompt": "Use the provided image as a strong identity reference for both individuals, strictly preserving their exact facial features, skin tone, and likeness without alteration; create a candid cinematic full-body shot of the same couple running through a vintage white marble corridor with soft peach-colored walls, the woman in the foreground wearing a flowing deep ruby-red Anarkali with a trailing dupatta and laughing naturally, the man following behind smiling in an off-white kurta and white trousers, both barefoot with natural motion and slight fabric blur but sharp undistorted faces, realistic proportions, Leica 35mm lens at f/1.8, shallow depth of field, soft bokeh, warm natural backlit lighting, vintage film grain, muted elegant color grading, ultra-realistic 8K detail."
   },
   {
     "id": 3,
     "category": "Couple",
-    "title": "Sunset Romance",
-    "image": "images/romantic_couple_sunset_1773857246895.png",
-    "prompt": "A romantic couple holding hands on a beach during a vibrant golden hour sunset, cinematic lighting, photorealistic"
+    "title": "Enchanted Evening Dance",
+    "image": "images/3.png",
+    "prompt": "Use the provided image as a strong identity reference for both individuals, strictly preserving their exact facial features, skin tone, and likeness without alteration; create a romantic outdoor evening photograph at night under a canopy of warm glowing string lights and hidden lanterns, a smiling man with short brown hair wearing a light-brown button-down shirt and dark trousers joyfully twirling a laughing woman in a dynamic pose, the woman with long wavy brown hair wearing a flowing layered champagne-gold gown with her dress swirling around her, dancing on a dirt path in a garden, soft blurred background with beautiful bokeh lights, illuminated by soft warm golden fairy lights, intimate magical joyful mood, cinematic candid shot, Leica 35mm lens at f/1.8, shallow depth of field, ultra-realistic high-resolution details with elegant cinematic color grading."
   },
   {
     "id": 4,
-    "category": "Gym",
-    "title": "Shadow Lifting",
-    "image": "images/gym_workout_motivation_1773857264056.png",
-    "prompt": "A muscular athlete working out in a dark gritty gym, heavy shadows, dramatic spot lighting, photorealistic heavy lifting"
+    "category": "Couple",
+    "title": "Serene Garden Swing",
+    "image": "images/4.png",
+    "prompt": "Use the provided image as a strong identity reference for both individuals, strictly preserving their exact facial features, skin tone, and likeness without alteration; create a soft romantic scene of the same woman sitting on a wooden swing adorned with white roses and lush greenery, wearing a sleeveless cream-colored maxi dress with a delicate floral print, while a man in a pale sage green shirt stands behind her leaning in close with a gentle smile, set in an outdoor garden with a brick path and a soft-focus view of a lake and green hills in the distance, bright airy natural lighting, peaceful Pinterest-style aesthetic, Leica 35mm lens at f/1.8, shallow depth of field, soft bokeh, ultra-realistic high-resolution details with elegant cinematic color grading."
   },
   {
     "id": 5,
-    "category": "Baby Boy",
-    "title": "Little Astronaut",
-    "image": "images/cool_dp_avatar_1773857228511.png",
-    "prompt": "An adorable baby boy wearing an oversized astronaut helmet, playing with glowing stars in his bedroom, pixar style animation, 4k"
-  },
-  {
-    "id": 6,
-    "category": "Baby Girl",
-    "title": "Fairy Princess",
-    "image": "images/anime_girl_city_1773857209604.png",
-    "prompt": "A cute baby girl with tiny glowing fairy wings, sitting on a giant mushroom in a magical forest, highly detailed, soft lighting"
-  },
-  {
-    "id": 7,
-    "category": "Men",
-    "title": "Dapper Gentleman",
-    "image": "images/cool_dp_avatar_1773857228511.png",
-    "prompt": "Portrait of a handsome man in a sharp tailored vintage suit, smoking a cigar in a dimly lit 1920s speakeasy, cinematic lighting, 8k"
-  },
-  {
-    "id": 8,
-    "category": "Women",
-    "title": "Ethereal Goddess",
-    "image": "images/romantic_couple_sunset_1773857246895.png",
-    "prompt": "A breathtaking portrait of a woman wearing a dress made of glowing starlight, floating gracefully in the cosmos, hyper-realistic photography"
-  },
-  {
-    "id": 9,
-    "category": "Art",
-    "title": "Abstract Swirls",
-    "image": "images/anime_girl_city_1773857209604.png",
-    "prompt": "An abstract masterpiece consisting of swirling oil paint in neon blue, hot pink, and metallic gold, rich texture, heavy impasto style"
-  },
-  {
-    "id": 10,
-    "category": "Sci-Fi",
-    "title": "Cyberpunk Outpost",
-    "image": "images/gym_workout_motivation_1773857264056.png",
-    "prompt": "A solitary glowing outpost on a desolate alien planet, twin moons in the sky, heavy fog, high-tech machinery, unreal engine 5 render"
-  },
-  {
-    "id": 11,
-    "category": "Baby Boy",
-    "title": "Dinosaur Rider",
-    "image": "images/romantic_couple_sunset_1773857246895.png",
-    "prompt": "A cute toddler boy riding a friendly triceratops through a prehistoric jungle, bright and colorful, disney animation style"
-  },
-  {
-    "id": 12,
-    "category": "Baby Girl",
-    "title": "Mermaid Splash",
-    "image": "images/anime_girl_city_1773857209604.png",
-    "prompt": "A cheerful baby girl with a tiny mermaid tail splashing in a crystal clear magical pool, surrounded by glowing fish, 4k"
-  },
-  {
-    "id": 13,
-    "category": "Men",
-    "title": "Viking Warrior",
-    "image": "images/gym_workout_motivation_1773857264056.png",
-    "prompt": "Epic shot of a fierce viking warrior holding a glowing icy axe during a snowstorm, war paint, hyper-detailed, dramatic cinematic lighting"
-  },
-  {
-    "id": 14,
-    "category": "Women",
-    "title": "Sci-Fi Assassin",
-    "image": "images/cool_dp_avatar_1773857228511.png",
-    "prompt": "A deadly female assassin wearing stealth futuristic cyberpunk gear, sitting on the edge of a skyscraper overlooking neon tokyo, hyper-realistic"
-  },
-  {
-    "id": 15,
-    "category": "Art",
-    "title": "Liquid Gold",
-    "image": "images/romantic_couple_sunset_1773857246895.png",
-    "prompt": "Macro photography of liquid metal pouring over a sphere, metallic reflection, obsidian and pure gold, 8k resolution, trending on artstation"
-  },
-  {
-    "id": 16,
-    "category": "Cinematic",
-    "title": "Desert Dune",
-    "image": "images/cool_dp_avatar_1773857228511.png",
-    "prompt": "Vast sand dunes from a cinematic dune-style movie, spice floating in the air, golden hour, immense scale, ultra-wide shot"
-  },
-  {
-    "id": 17,
-    "category": "Fantasy",
-    "title": "Floating Islands",
-    "image": "images/anime_girl_city_1773857209604.png",
-    "prompt": "Majestic floating islands with waterfalls pouring into the clouds, glowing crystals, soaring dragons, high fantasy concept art"
-  },
-  {
-    "id": 18,
-    "category": "Logo Design",
-    "title": "Tech Startup Logo",
-    "image": "images/romantic_couple_sunset_1773857246895.png",
-    "prompt": "Minimalist modern app logo consisting of an overlapping abstract geometric shape, teal and purple gradient, dark background, vector style"
-  },
-  {
-    "id": 19,
-    "category": "UI/UX",
-    "title": "Smart Home App",
-    "image": "images/gym_workout_motivation_1773857264056.png",
-    "prompt": "A beautiful UI dashboard design for a smart home application, glassmorphism elements, dark mode interface, elegant typography"
-  },
-  {
-    "id": 20,
-    "category": "Cars",
-    "title": "Neon Supercar",
-    "image": "images/anime_girl_city_1773857209604.png",
-    "prompt": "A sleek futuristic supercar drifting on a wet neon-lit city street at night, heavy rain, reflections on asphalt, action shot"
-  },
-  {
-    "id": 21,
-    "category": "Pets",
-    "title": "Samurai Cat",
-    "image": "images/cool_dp_avatar_1773857228511.png",
-    "prompt": "A fluffy orange cat wearing traditional intricate samurai armor, holding a tiny katana, serious expression, highly detailed fur, rim lighting"
-  },
-  {
-    "id": 22,
-    "category": "Horror",
-    "title": "Abandoned Asylum",
-    "image": "images/gym_workout_motivation_1773857264056.png",
-    "prompt": "A terrifying abandoned asylum corridor, flickering fluorescent lights, twisted silhouettes, extremely dark and gritty, photorealistic horror"
-  },
-  {
-    "id": 23,
-    "category": "Minimalism",
-    "title": "Zen Garden",
-    "image": "images/romantic_couple_sunset_1773857246895.png",
-    "prompt": "A simple minimalist zen garden, one smooth black stone resting on raked white sand, soft studio lighting, perfectly balanced composition"
-  },
-  {
-    "id": 24,
-    "category": "Cybernetics",
-    "title": "Robot Hand",
-    "image": "images/anime_girl_city_1773857209604.png",
-    "prompt": "Extreme macro close-up of a highly intricate robotic hand holding a glowing green microchip, hyper-detailed mechanical parts, 8k"
-  },
-  {
-    "id": 25,
-    "category": "Tattoos",
-    "title": "Viking Sleeve",
-    "image": "images/cool_dp_avatar_1773857228511.png",
-    "prompt": "A detailed full arm sleeve tattoo design featuring norse mythology, a wolf and runes, black and grey shading, clean linework style"
+    "category": "Couple",
+    "title": "Golden Night Twirl",
+    "image": "images/5.png",
+    "prompt": "Use the provided image as a strong identity reference for both individuals, strictly preserving their exact facial features, skin tone, and likeness without alteration; create a cinematic candid shot of the same laughing couple dancing on a dirt garden path at night, the woman wearing a voluminous flowing champagne-gold gown that twirls around her, the man in a light linen button-down shirt and dark trousers twirling her under a canopy of warm glowing string lights, soft bokeh background with golden fairy lights and distant trees, warm magical lighting emphasizing joyful expressions, Leica 35mm lens at f/1.8, shallow depth of field, ultra-realistic high-resolution details with elegant cinematic color grading."
   }
 ]
