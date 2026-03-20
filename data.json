@@ -40,5 +40,12 @@
     "title": "Pop Art Identity Lock",
     "image": "images/6.png",
     "prompt": "Use the uploaded image as the only facial reference with absolute identity lock, strictly preserving skull structure, jawline, cheek volume, chin shape, nose bridge, lips, eye spacing, eyebrow density, beard pattern, hairline, natural asymmetry, and real skin texture with visible pores (no smoothing, reshaping, or artificial sharpening); create an ultra-realistic pop-art cinematic circular DP with a 3/4 front-facing angle (25–35° turn) from side profile, both eyes clearly visible with defined nose bridge and jawline while maintaining the same expression and natural posture, outfit unchanged as a black high-neck zip jacket with visible zipper detail, lighting with a directional key light from front-left for facial clarity, controlled shadow on the far cheek, and subtle rim light on hair for separation, subject in high-contrast black-and-white, background featuring a bold comic-style circular design split vertically with yellow halftone dots on the left and red halftone dots on the right, black radial burst lines expanding from center behind the head, clean vector finish, centered composition inside a perfect circular frame with upper torso crop and no outer white border, strong contrast between monochrome subject and vibrant background, 1:1 ratio, sharp DSLR realism, poster-grade clarity."
+  },
+  {
+    "id": 7,
+    "category": "Anime",
+    "title": "Shadowed Straw Legend",
+    "image": "images/7.jpeg",
+    "prompt": "Use the uploaded image as the primary facial reference with strong identity preservation, maintaining exact facial structure, skin texture, and likeness; create a photorealistic cinematic close-up of the same male subject with his right hand reaching up to grasp the brim of a textured yellow straw hat with a wide red fabric band, the hat casting a deep sharp shadow obscuring the eyes and upper face, wearing a heavy black high-collared coat draped over the shoulders with a subtle glimpse of a red shirt underneath, warm intense backlighting creating a golden rim-light effect on the hat and hand against a bright softly blurred outdoor background, high-contrast cinematic lighting, hyper-realistic fabric and straw textures, shallow depth of field, ultra-detailed 8K quality, 1:1 aspect ratio, --v 6.0 --style raw --q 2"
   }
 ]
