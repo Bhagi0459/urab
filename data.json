@@ -33,5 +33,12 @@
     "title": "Golden Night Twirl",
     "image": "images/5.png",
     "prompt": "Use the provided image as a strong identity reference for both individuals, strictly preserving their exact facial features, skin tone, and likeness without alteration; create a cinematic candid shot of the same laughing couple dancing on a dirt garden path at night, the woman wearing a voluminous flowing champagne-gold gown that twirls around her, the man in a light linen button-down shirt and dark trousers twirling her under a canopy of warm glowing string lights, soft bokeh background with golden fairy lights and distant trees, warm magical lighting emphasizing joyful expressions, Leica 35mm lens at f/1.8, shallow depth of field, ultra-realistic high-resolution details with elegant cinematic color grading."
+  },
+  {
+    "id": 6,
+    "category": "DP",
+    "title": "Pop Art Identity Lock",
+    "image": "images/6.png",
+    "prompt": "Use the uploaded image as the only facial reference with absolute identity lock, strictly preserving skull structure, jawline, cheek volume, chin shape, nose bridge, lips, eye spacing, eyebrow density, beard pattern, hairline, natural asymmetry, and real skin texture with visible pores (no smoothing, reshaping, or artificial sharpening); create an ultra-realistic pop-art cinematic circular DP with a 3/4 front-facing angle (25–35° turn) from side profile, both eyes clearly visible with defined nose bridge and jawline while maintaining the same expression and natural posture, outfit unchanged as a black high-neck zip jacket with visible zipper detail, lighting with a directional key light from front-left for facial clarity, controlled shadow on the far cheek, and subtle rim light on hair for separation, subject in high-contrast black-and-white, background featuring a bold comic-style circular design split vertically with yellow halftone dots on the left and red halftone dots on the right, black radial burst lines expanding from center behind the head, clean vector finish, centered composition inside a perfect circular frame with upper torso crop and no outer white border, strong contrast between monochrome subject and vibrant background, 1:1 ratio, sharp DSLR realism, poster-grade clarity."
   }
 ]
