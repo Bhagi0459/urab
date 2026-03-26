@@ -47,5 +47,12 @@
     "title": "Shadowed Straw Legend",
     "image": "images/7.jpeg",
     "prompt": "Use the uploaded image as the primary facial reference with strong identity preservation, maintaining exact facial structure, skin texture, and likeness; create a photorealistic cinematic close-up of the same male subject with his right hand reaching up to grasp the brim of a textured yellow straw hat with a wide red fabric band, the hat casting a deep sharp shadow obscuring the eyes and upper face, wearing a heavy black high-collared coat draped over the shoulders with a subtle glimpse of a red shirt underneath, warm intense backlighting creating a golden rim-light effect on the hat and hand against a bright softly blurred outdoor background, high-contrast cinematic lighting, hyper-realistic fabric and straw textures, shallow depth of field, ultra-detailed 8K quality, 1:1 aspect ratio, --v 6.0 --style raw --q 2"
+  },
+  {
+    "id": 8,
+    "category": "Couple",
+    "title": "Joyful moment on a swing",
+    "image": "images/8.png",
+    "prompt": "Without changing the facial features of above image couple, create a hand drawn colored vector line drawing utra-realistic lifestyle couple portrait. Girl should be sitting in a big swing. guy should be behind her ,pulling the swing with love. Natural candid moment full of joy and laughter and love. There should be colorful powder splash in white background. Both should wear beige color glittering dress. Girl should be with saree Vector line drawing. no black and white picture. aspect ratio 9:16. full body view. preserve exact face of uploaded image couple"
   }
 ]
