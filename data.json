@@ -61,5 +61,18 @@
     "title": "The Timeless Connection",
     "image": "images/9.png",
     "prompt": "Create a real style image. Left side: A child version of me (based on a childhood photo), sitting and looking to the right with an innocent, soft smile. Add the year “1996” above her. Right side: A present-day version of me (based on a recent photo), sitting with hands gently placed under the chin, smiling calmly and looking at the child. Add the year “2026” above her. Center: A simple, elegant birthday cake placed on a table between them. Background: Plain, soft studio background with minimal distractions. Lighting: Soft, warm, cinematic lighting (can also work in black-and-white tone). Style: Professional, minimal, emotional photography — focus on connection, eye contact, and feelings between the two versions. Additional instructions: Keep facial features natural and unchanged. Make it look like a real photoshoot (high realism). Soft shadows, natural skin texture. Photo aspect ratio 4:5."
+  },
+  {
+    "id": 10,
+    "category": "kid",
+    "title": "Hello Summer",
+    "image": "images/10.png",
+    "prompt": "A high-quality flat-lay photograph of a cheerful Indian baby girl with big dark eyes and a small ponytail tied on top, smiling happily, placed at the center of a summer-themed creative layout on a soft sandy beach background, surrounded by watermelon slices, coconut water with colorful straws, and small ice cream cones, with “HELLO SUMMER” written at the top using small dark grapes, the baby wearing a cute pink sleeveless dress, with bright sunny professional lighting, vibrant colors, and 8K resolution."
+  },
+  {
+    "id": 11,
+    "category": "kid",
+    "title": "Bharatanaatyam",
+    "image": "images/11.png",
+    "prompt": "Convert this portrait into a stunning Bharatanatyam dancer with perfect stage-ready makeup and costume, intricate gold jewelry, vibrant silk costume with pleats, dramatic eye makeup highlighting expressions, red alta on fingers, precise mudras, traditional bun with flowers and ornaments, cinematic stage lighting with spotlight effect, subtle motion blur for live performance feel, ultra-realistic, high resolution, 4K quality."
   }
-]
