@@ -86,8 +86,15 @@
   {
     "id": 13,
     "category": "Viral",
-    "title": "Radiance✨",
+    "title": "Radiance",
     "image": "images/13.png",
     "prompt": "Create an uploaded image black-and-white portrait of a young woman sitting casually on the floor with legs crossed, smiling softly while looking upward; she has long wavy hair with a braided section, wearing a fitted black long-sleeve top, light denim jeans, and chunky white sneakers, with soft studio-style lighting and smooth shadows; behind her is a large semi-transparent double-exposure overlay of her face looking upward with a joyful expression, creating a dreamy artistic effect, with a modern minimalist emotional feel, clean grey background, polished floor reflection, high-resolution, cinematic, monochrome aesthetic."
+  },
+  {
+    "id": 14,
+    "category": "Couple",
+    "title": "Celebrating a Beautiful Journey",
+    "image": "images/14.png",
+    "prompt": "Cinematic ultra-realistic Telugu-style anniversary poster featuring the exact same couple from the reference images with identical facial features and realistic skin texture, the groom in a royal black sherwani and the bride in a pastel blue Telugu bridal saree, set in a luxurious palace background with fairy lights, candles, floral décor, dreamy cinematic Telugu movie vibe, watercolor pastel splash edges, premium golden typography saying “Happy Anniversary”, names “Ramesh Babu” and “Usha Rani”, elegant “20 May 1994” calendar element, ultra HD, soft dreamy lighting, premium aesthetic, highly detailed, exact 4:5 ratio."
   }
 ]
