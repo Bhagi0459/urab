@@ -37,7 +37,8 @@
     "email": "support@urab.in",
     "subOrganization": [
       { "@type": "Store", "name": "Naa Cheti Kala", "url": "https://urab.in/naa-cheti-kala", "description": "Handmade gifts and home décor, shipped anywhere" },
-      { "@type": "EventPlanner", "name": "GK Signature Events • Decors", "url": "https://gksignature.vercel.app/", "description": "Event planning and decoration in Hyderabad" }
+      { "@type": "EventPlanner", "name": "GK Signature Events • Decors", "url": "https://gksignature.vercel.app/", "description": "Event planning and decoration in Hyderabad" },
+      { "@type": "ProfessionalService", "name": "URAB Digital", "url": "https://urab.in/urab-digital", "description": "Websites and online setup for small local businesses" }
     ]
   }
   </script>
@@ -71,9 +72,10 @@
     .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .brand img { height: 46px; width: auto; }
     .nav-links { display: flex; gap: 26px; list-style: none; align-items: center; }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: .9rem; transition: color .2s; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .9rem; white-space: nowrap; transition: color .2s; }
     .nav-links a:hover { color: var(--bronze-light); }
     @media (max-width: 600px) { .nav-links .hide-sm { display: none; } .nav-links { gap: 18px; } }
+    @media (max-width: 400px) { .nav-links { gap: 13px; } .nav-links a { font-size: .84rem; } }
 
     /* ---------- Hero ---------- */
     .hero { min-height: 92svh; display: grid; place-items: center; text-align: center; padding: 110px 0 60px; position: relative; overflow: hidden; }
@@ -114,10 +116,9 @@
     .branch-cta { margin-top: auto; padding-top: 8px; color: var(--bronze-light); font-weight: 600; font-size: .92rem; }
     .branch-cta::after { content: " →"; transition: margin .2s; }
     .branch:hover .branch-cta::after { margin-left: 4px; }
-    .soon { border-style: dashed; justify-content: center; align-items: center; text-align: center; padding: 40px 26px; min-height: 260px; }
-    .soon:hover { transform: none; box-shadow: none; border-color: var(--line); }
-    .soon h3 { font-size: 1.6rem; margin-bottom: 8px; }
-    .soon p { color: var(--muted); font-size: .92rem; max-width: 280px; }
+    .art-digital { background: radial-gradient(circle at 50% 40%, rgba(192, 138, 78, .28) 0, #1c1814 60%, #14110e 100%); }
+    .art-digital .brand-logo { object-fit: contain; padding: 14px; background: #14110e; border: 3px solid var(--bronze); }
+    .art-digital h3 { background: var(--bronze-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
 
     /* ---------- Celebration combos ---------- */
@@ -183,6 +184,7 @@
       <ul class="nav-links">
         <li><a href="#brands">Our Brands</a></li>
         <li><a href="#combos">Combos</a></li>
+        <li><a href="/urab-digital">Digital</a></li>
         <li class="hide-sm"><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -238,10 +240,20 @@
           </div>
         </a>
 
-        <div class="branch soon">
-          <h3 class="bronze-text">More coming soon</h3>
-          <p>URAB keeps growing. New handmade and heartfelt brands will join the family here.</p>
-        </div>
+        <a class="branch" href="/urab-digital">
+          <div class="branch-art art-digital">
+            <img class="brand-logo" src="/images/logo.png" alt="URAB logo" loading="lazy">
+            <div>
+              <h3>URAB Digital</h3>
+              <div class="te">Websites • Google • Reviews</div>
+            </div>
+          </div>
+          <div class="branch-body">
+            <p>The website, Google listing, review and enquiry setup we built for our own brands, now for other small local businesses.</p>
+            <div class="tags"><span>Websites</span><span>Google setup</span><span>Reviews</span><span>WhatsApp buttons</span></div>
+            <span class="branch-cta">Explore URAB Digital</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -348,6 +360,7 @@
       <div class="footer-links">
         <a href="/naa-cheti-kala">Naa Cheti Kala</a>
         <a href="/gk-signature/">GK Signature Events • Decors</a>
+        <a href="/urab-digital">URAB Digital</a>
       </div>
       <div class="follow">
         <h3>Follow us on Instagram</h3>
