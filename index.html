@@ -97,13 +97,16 @@
     .branch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
     .branch { position: relative; display: flex; flex-direction: column; border-radius: var(--radius); overflow: hidden; text-decoration: none; background: var(--card); border: 1px solid var(--line); transition: transform .3s, border-color .3s, box-shadow .3s; }
     .branch:hover { transform: translateY(-6px); border-color: var(--bronze); box-shadow: 0 20px 50px rgba(0, 0, 0, .45); }
-    .branch-art { aspect-ratio: 16 / 9; display: grid; place-items: center; position: relative; overflow: hidden; }
-    .branch-art img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
-    .branch:hover .branch-art img { transform: scale(1.05); }
-    .branch-art .wordmark { position: absolute; inset: auto 0 0 0; padding: 40px 24px 18px; background: linear-gradient(transparent, rgba(0, 0, 0, .75)); color: #fff; }
-    .branch-art .wordmark h3 { font-size: 1.9rem; }
-    .branch-art .wordmark .te { font-size: .95rem; opacity: .85; }
-    .branch-art .brand-badge { position: absolute; top: 14px; right: 14px; width: 64px !important; height: 64px !important; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 6px 18px rgba(0,0,0,.4); }
+    .branch-art { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 34px 20px 26px; text-align: center; position: relative; overflow: hidden; }
+    .branch-art .brand-logo { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 12px 30px rgba(0, 0, 0, .35); transition: transform .4s; }
+    .branch:hover .brand-logo { transform: scale(1.06) rotate(-2deg); }
+    .branch-art h3 { font-size: 1.9rem; }
+    .branch-art .te { font-size: .95rem; opacity: .85; }
+    .art-nck { color: #7a3520; background: radial-gradient(circle at 50% 40%, #fffaf3 0, #f3e6d4 55%, #e3c9a8 100%); }
+    .art-nck .brand-logo { border: 4px solid #fff; }
+    .art-gk { color: #fff; background: radial-gradient(circle at 50% 40%, #3a2a1c 0, #1a130d 60%, #0f0b08 100%); }
+    .art-gk .brand-logo { border: 3px solid #d4a94f; }
+    .art-gk h3 { background: linear-gradient(135deg, #f3dc9d, #d4a94f 45%, #a87a2a); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .branch-body { padding: 24px 26px 28px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
     .branch-body p { color: var(--muted); font-size: .95rem; }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -181,10 +184,9 @@
 
       <div class="branch-grid">
         <a class="branch" href="/naa-cheti-kala">
-          <div class="branch-art">
-            <img src="/images/naa-cheti-kala/lotus-lamps.jpg" alt="Handmade crochet lotus lamps by Naa Cheti Kala" loading="lazy">
-            <img class="brand-badge" src="/images/naa-cheti-kala/logo.jpg" alt="Naa Cheti Kala logo">
-            <div class="wordmark">
+          <div class="branch-art art-nck">
+            <img class="brand-logo" src="/images/naa-cheti-kala/logo.jpg" alt="Naa Cheti Kala logo" loading="lazy">
+            <div>
               <h3>Naa Cheti Kala</h3>
               <div class="te" lang="te">నా చేతి కళ - Dhana</div>
             </div>
@@ -197,9 +199,9 @@
         </a>
 
         <a class="branch" href="/gk-signature/">
-          <div class="branch-art">
-            <img src="/images/gk-signature.jpg" alt="GK Signature event décor setup" loading="lazy">
-            <div class="wordmark">
+          <div class="branch-art art-gk">
+            <img class="brand-logo" src="/images/gk-signature-logo.png" alt="GK Signature Events • Decors logo" loading="lazy">
+            <div>
               <h3>GK Signature</h3>
               <div class="te">Events • Decors</div>
             </div>
