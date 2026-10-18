@@ -163,7 +163,6 @@
     .item-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
     .item:hover .item-img img { transform: scale(1.05); }
     .item-tag { position: absolute; top: 12px; left: 12px; padding: 4px 11px; border-radius: 999px; font-size: .72rem; font-weight: 600; background: rgba(255, 250, 243, .95); color: var(--terracotta-deep); }
-    .item-sample { position: absolute; top: 12px; right: 12px; padding: 4px 10px; border-radius: 999px; font-size: .7rem; font-weight: 600; background: rgba(46, 33, 26, .78); color: #fff; }
     .item-body { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
     .item-body h3 { font-size: 1.35rem; }
     .item-body p { color: var(--muted); font-size: .88rem; flex: 1; }
@@ -272,7 +271,7 @@
       </div>
       <div class="filters" role="group" aria-label="Filter items"></div>
       <div class="items" id="item-grid"></div>
-      <p class="shop-note">Looking for something else? <a href="#contact" data-order="Hi Naa Cheti Kala, I'd like a customised gift.">Ask for a custom gift</a> or see more on <a href="https://www.instagram.com/naa_cheti_kala/" target="_blank" rel="noopener">@naa_cheti_kala</a>.<br>Planning an event in Hyderabad? See our <a href="/#combos">Celebration Combos</a> with GK Signature décor.<br><small>Items marked "Sample design" show a reference photo (Unsplash). We make them by hand to your order.</small></p>
+      <p class="shop-note">Looking for something else? <a href="#contact" data-order="Hi Naa Cheti Kala, I'd like a customised gift.">Ask for a custom gift</a> or see more on <a href="https://www.instagram.com/naa_cheti_kala/" target="_blank" rel="noopener">@naa_cheti_kala</a>.<br>Planning an event in Hyderabad? See our <a href="/#combos">Celebration Combos</a> with GK Signature décor.</p>
     </div>
   </section>
 
@@ -323,8 +322,6 @@
   <script>
     // Shop items. To add one: put the photo in images/naa-cheti-kala/ and add a line here.
     // tags decide which filter buttons show the item.
-    // sample: true marks a free stock photo (Unsplash) of a design we make to order, not our own photo.
-    // Replace it with a real photo once Dhana makes one, then remove "sample: true".
     const ITEMS = [
       { name: 'Customised Birthday Hoop', img: 'birthday-embroidery-hoop.jpg', tags: ['Birthday', 'Embroidery'], desc: 'Name, age and theme hand-embroidered on a hoop. A birthday gift they will keep forever.' },
       { name: 'Family Birthday Hoop', img: 'family-birthday-hoop.jpg', tags: ['Birthday', 'Embroidery'], desc: 'A hand-embroidered family with a fabric dress, pearl border, tassels and your own birthday message.' },
@@ -337,13 +334,7 @@
       { name: 'Crochet Lotus Ganapathi Setup', img: 'crochet-lotus-ganapathi.jpg', tags: ['Festive', 'Crochet'], desc: 'Handmade crochet lotus backdrop for Ganapathi and pooja setups.' },
       { name: 'Evil-Eye Coasters', img: 'evil-eye-coasters.jpg', tags: ['Crochet'], desc: 'Set of crochet evil-eye coasters in blues. Colours can be customised.' },
       { name: 'Crochet Sunflower', img: 'crochet-sunflower.jpg', tags: ['Crochet', 'Birthday'], desc: 'A forever-fresh crochet sunflower, single or as a bouquet.' },
-      { name: 'Diwali Pipe-Cleaner Décor', img: 'diwali-pipe-cleaner-art.jpg', tags: ['Festive'], desc: 'Diyas, torans, hangings and rangoli pieces made from pipe cleaners. Pre-book before Diwali.' },
-      { name: 'Crochet Flower Bouquet', img: 'samples/crochet-bouquet.jpg', sample: true, tags: ['Birthday', 'Crochet'], desc: 'A bouquet that never wilts. Choose the flowers and colours for birthdays and anniversaries.' },
-      { name: 'Crochet Bunny Soft Toy', img: 'samples/crochet-bunny.jpg', sample: true, tags: ['Birthday', 'Crochet'], desc: 'A soft, hand-crocheted bunny for kids\' birthdays and baby showers.' },
-      { name: 'Crochet Mini Toys', img: 'samples/crochet-mini-toys.jpg', sample: true, tags: ['Return Gifts', 'Crochet'], desc: 'Small crochet animals in your party colours. Lovely as return gifts.' },
-      { name: 'Smiley Flower Pots', img: 'samples/smiley-flower-pots.jpg', sample: true, tags: ['Return Gifts', 'Crochet'], desc: 'Cheerful crochet flowers in mini pots, ordered in bulk for birthdays and functions.' },
-      { name: 'Crochet Flower Pot', img: 'samples/crochet-flower-pot.jpg', sample: true, tags: ['Crochet'], desc: 'A forever-fresh crochet plant for desks and shelves. Colours customisable.' },
-      { name: 'Custom Gift Hamper', img: 'samples/gift-hamper.jpg', sample: true, tags: ['Birthday', 'Return Gifts'], desc: 'Handmade pieces packed together in a gift box for any occasion. Tell us the budget and theme.' }
+      { name: 'Diwali Pipe-Cleaner Décor', img: 'diwali-pipe-cleaner-art.jpg', tags: ['Festive'], desc: 'Diyas, torans, hangings and rangoli pieces made from pipe cleaners. Pre-book before Diwali.' }
     ];
 
     // Ordering: Instagram chat for now. Set the WhatsApp number (country code + number, no "+" or spaces,
@@ -358,11 +349,11 @@
     const grid = document.getElementById('item-grid');
     grid.innerHTML = ITEMS.map(it => `
       <article class="item" data-tags="${it.tags.join(',')}">
-        <div class="item-img"><img src="/images/naa-cheti-kala/${it.img}" alt="${esc(it.name)}" loading="lazy"><span class="item-tag">${it.tags[0]}</span>${it.sample ? '<span class="item-sample">Sample design</span>' : ''}</div>
+        <div class="item-img"><img src="/images/naa-cheti-kala/${it.img}" alt="${esc(it.name)}" loading="lazy"><span class="item-tag">${it.tags[0]}</span></div>
         <div class="item-body">
           <h3>${esc(it.name)}</h3>
           <p>${esc(it.desc)}</p>
-          <span class="item-meta">${it.sample ? 'Made to order · Price on request' : 'Customisable · Price on request · Pre-book'}</span>
+          <span class="item-meta">Customisable · Price on request · Pre-book</span>
           <a class="order-btn" href="#contact" data-order="Hi Naa Cheti Kala, I'd like to order: ${esc(it.name)}">${ORDER_ICON}Order</a>
         </div>
       </article>`).join('');
