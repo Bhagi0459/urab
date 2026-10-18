@@ -120,15 +120,6 @@
     .cat h3 { font-size: 1.5rem; margin-bottom: 6px; }
     .cat p { color: var(--muted); font-size: .92rem; }
 
-    /* ---------- Gallery ---------- */
-    .gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 14px; }
-    .tile { margin: 0; border-radius: 14px; position: relative; overflow: hidden; background: var(--bg); }
-    .tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
-    .tile:hover img { transform: scale(1.05); }
-    .tile figcaption { position: absolute; inset: auto 0 0 0; padding: 26px 12px 10px; color: #fff; font-size: .82rem; font-weight: 500; background: linear-gradient(transparent, rgba(0,0,0,.65)); }
-    .tile.wide { grid-column: span 2; } .tile.tall { grid-row: span 2; }
-    .gallery-note { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 18px; }
-    @media (max-width: 760px) { .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; } .tile.tall { grid-row: span 1; } }
 
     /* ---------- Steps ---------- */
     .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; counter-reset: step; }
@@ -154,10 +145,40 @@
     .urab-link { display: flex; } .urab-link img { height: 40px; width: auto; }
     footer .nck-logo { width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 14px; border: 1px solid var(--line); }
 
-    /* ---------- WhatsApp float ---------- */
-    .wa-float { position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 10px 25px rgba(0,0,0,.25); }
-    .wa-float[hidden] { display: none; }
-    .wa-float svg { width: 30px; height: 30px; fill: #fff; }
+    /* ---------- Pre-book banner ---------- */
+    .prebook { margin-top: 36px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; padding: 24px 28px; border-radius: var(--radius); color: #fff; background: linear-gradient(120deg, var(--teal), #234743); box-shadow: var(--shadow); }
+    .prebook .big { font-size: 2.2rem; }
+    .prebook div { flex: 1 1 320px; }
+    .prebook h3 { font-size: 1.6rem; color: #fff; margin-bottom: 4px; }
+    .prebook p { opacity: .9; font-size: .95rem; }
+
+    /* ---------- Shop items ---------- */
+    .filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: -20px 0 30px; }
+    .filters button { font: inherit; font-size: .85rem; padding: 7px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+    .filters button.active { background: var(--terracotta); border-color: var(--terracotta); color: #fff; }
+    .items { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 22px; }
+    .item { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: transform .25s, box-shadow .25s; }
+    .item:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .item-img { position: relative; aspect-ratio: 1; overflow: hidden; background: var(--bg-alt); }
+    .item-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .item:hover .item-img img { transform: scale(1.05); }
+    .item-tag { position: absolute; top: 12px; left: 12px; padding: 4px 11px; border-radius: 999px; font-size: .72rem; font-weight: 600; background: rgba(255, 250, 243, .95); color: var(--terracotta-deep); }
+    .item-sample { position: absolute; top: 12px; right: 12px; padding: 4px 10px; border-radius: 999px; font-size: .7rem; font-weight: 600; background: rgba(46, 33, 26, .78); color: #fff; }
+    .item-body { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .item-body h3 { font-size: 1.35rem; }
+    .item-body p { color: var(--muted); font-size: .88rem; flex: 1; }
+    .item-meta { font-size: .78rem; color: var(--teal); font-weight: 500; }
+    .order-btn { margin-top: 6px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 18px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: .9rem; color: #fff; background: var(--terracotta); transition: background .2s; }
+    .order-btn:hover { background: var(--terracotta-deep); }
+    .order-btn svg, .btn svg { width: 17px; height: 17px; }
+    .shop-note { text-align: center; color: var(--muted); font-size: .88rem; margin-top: 26px; }
+
+    /* ---------- Chat float + toast ---------- */
+    .chat-float { position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,.25); background: linear-gradient(45deg, #f09433, #dc2743 50%, #bc1888); }
+    .chat-float.wa { background: #25d366; }
+    .chat-float svg { width: 28px; height: 28px; }
+    .toast { position: fixed; left: 50%; bottom: 90px; transform: translate(-50%, 20px); z-index: 70; max-width: calc(100% - 32px); padding: 12px 18px; border-radius: 12px; background: var(--ink); color: #fff; font-size: .88rem; text-align: center; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
     /* ---------- Follow on Instagram ---------- */
     .follow { margin: 0 auto 30px; max-width: 900px; }
@@ -183,12 +204,12 @@
     <div class="container">
       <a href="/naa-cheti-kala" class="brand"><img src="/images/naa-cheti-kala/logo.jpg" alt="Naa Cheti Kala logo"><div><strong>Naa Cheti Kala</strong><small>A URAB brand</small></div></a>
       <ul class="nav-links">
+        <li class="hide-sm"><a href="#items">Shop</a></li>
         <li class="hide-sm"><a href="#collections">Collections</a></li>
-        <li class="hide-sm"><a href="#gallery">Gallery</a></li>
         <li class="hide-sm"><a href="#order">How to order</a></li>
         <li class="hide-sm"><a href="https://www.instagram.com/naa_cheti_kala/" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="/" class="urab-link" title="Back to URAB"><img src="/images/logo.png" alt="URAB"></a></li>
-        <li><a href="#contact" class="nav-cta">Order</a></li>
+        <li><a href="#contact" class="nav-cta" data-order="Hi Naa Cheti Kala, I'd like to place an order.">Order</a></li>
       </ul>
     </div>
   </nav>
@@ -199,17 +220,17 @@
         <span class="eyebrow">Handmade with love</span>
         <h1>Naa Cheti Kala</h1>
         <div class="te te-title" lang="te">నా చేతి కళ - Dhana</div>
-        <p>Hand embroidery, crochet and festive décor by Arts of Dhana. Every piece is stitched by hand, made especially for you, and shipped anywhere.</p>
+        <p>Customised birthday gifts, hand embroidery, crochet and festive décor by Arts of Dhana. Every piece is made by hand on pre-booking, especially for you, and shipped anywhere.</p>
         <div class="btns">
-          <a href="#collections" class="btn btn-primary">Explore collections</a>
-          <a href="#contact" class="btn btn-outline" data-wa="Hi Naa Cheti Kala, I'd like to place a custom order.">Custom order</a>
+          <a href="#items" class="btn btn-primary">Shop items</a>
+          <a href="#contact" class="btn btn-outline" data-order="Hi Naa Cheti Kala, I'd like to pre-book a customised gift.">Pre-book a custom gift</a>
         </div>
       </div>
       <div class="hero-art" aria-hidden="true">
         <div class="ring"></div>
         <div class="disc"><img src="/images/naa-cheti-kala/lotus-lamps.jpg" alt=""></div>
         <img class="badge" src="/images/naa-cheti-kala/logo.jpg" alt="">
-        <div class="chip c1">🧵 Embroidery hoops</div>
+        <div class="chip c1">🎂 Birthday gifts</div>
         <div class="chip c2">🧶 Crochet décor</div>
         <div class="chip c3">📦 We ship anywhere</div>
       </div>
@@ -221,37 +242,37 @@
       <div class="section-head">
         <span class="eyebrow">Collections</span>
         <h2>Crafted for <span class="accent">every occasion</span></h2>
-        <p>From a small token of love to a full set of return gifts, everything is made to order.</p>
+        <p>Birthdays, anniversaries, baby showers, festivals and more. We make customised gifts for every occasion, on pre-booking.</p>
       </div>
       <div class="cat-grid">
+        <div class="cat"><div class="icon">🎂</div><h3>Birthday Gifts</h3><p>Customised birthday hoops and gifts with the name, age and theme of your choice.</p></div>
         <div class="cat"><div class="icon">🧵</div><h3>Embroidery Hoops</h3><p>Hand-embroidered portraits, birthday and name hoops, and calendar keepsakes for special dates.</p></div>
         <div class="cat"><div class="icon">🧶</div><h3>Crochet Décor</h3><p>Crochet lotus and flower lamps, sunflowers, coasters and accents for a warm, handmade home.</p></div>
         <div class="cat"><div class="icon">🪔</div><h3>Festive &amp; Pooja</h3><p>Pipe-cleaner diyas, torans and hangings, Ganapathi setups and decorated coconuts for every festival.</p></div>
-        <div class="cat"><div class="icon">🎁</div><h3>Personalised Gifts</h3><p>Gifts with names, photos and dates for birthdays, anniversaries and the people you love.</p></div>
         <div class="cat"><div class="icon">🛍️</div><h3>Return Gifts</h3><p>Handmade return gifts for baby showers, birthdays, house warmings and pujas.</p></div>
-        <div class="cat"><div class="icon">✍️</div><h3>Custom Orders</h3><p>Have an idea? Share a photo or theme and we'll make it by hand, just for you.</p></div>
+        <div class="cat"><div class="icon">🎁</div><h3>Every Occasion</h3><p>Anniversaries, weddings, baby showers and more. Share a photo or idea and we'll make it by hand.</p></div>
+      </div>
+      <div class="prebook">
+        <span class="big" aria-hidden="true">🗓️</span>
+        <div>
+          <h3>Customised gifts on pre-booking</h3>
+          <p>Every gift is handmade to order. Message us early with the occasion and date so we can book your slot.</p>
+        </div>
+        <a href="#contact" class="btn btn-light" data-order="Hi Naa Cheti Kala, I'd like to pre-book a customised gift.">Pre-book now</a>
       </div>
     </div>
   </section>
 
-  <section id="gallery" class="alt">
+  <section id="items" class="alt">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Gallery</span>
-        <h2>From <span class="accent">our hands</span> to yours</h2>
+        <span class="eyebrow">Shop</span>
+        <h2>Our <span class="accent">handmade</span> items</h2>
+        <p>Every item can be customised with names, colours and themes. Tap Order to chat with us and pre-book.</p>
       </div>
-      <div class="gallery">
-        <figure class="tile wide tall"><img src="/images/naa-cheti-kala/embroidery-portraits.jpg" alt="Hand-embroidered couple portrait hoops" loading="lazy"><figcaption>Embroidered portrait hoops</figcaption></figure>
-        <figure class="tile tall"><img src="/images/naa-cheti-kala/crochet-lotus-ganapathi.jpg" alt="Crochet lotus Ganapathi setup" loading="lazy"><figcaption>Crochet lotus Ganapathi setup</figcaption></figure>
-        <figure class="tile"><img src="/images/naa-cheti-kala/birthday-embroidery-hoop.jpg" alt="Happy birthday embroidery hoop" loading="lazy"><figcaption>Birthday hoop</figcaption></figure>
-        <figure class="tile"><img src="/images/naa-cheti-kala/evil-eye-coasters.jpg" alt="Crochet evil eye coasters" loading="lazy"><figcaption>Evil-eye coasters</figcaption></figure>
-        <figure class="tile tall"><img src="/images/naa-cheti-kala/crochet-flower-lamp.jpg" alt="Glowing crochet flower lamp" loading="lazy"><figcaption>Crochet flower lamp</figcaption></figure>
-        <figure class="tile wide"><img src="/images/naa-cheti-kala/diwali-pipe-cleaner-art.jpg" alt="Diwali pipe cleaner art collection" loading="lazy"><figcaption>Diwali pipe-cleaner art</figcaption></figure>
-        <figure class="tile"><img src="/images/naa-cheti-kala/calendar-embroidery-hoop.jpg" alt="Calendar keepsake embroidery hoop" loading="lazy"><figcaption>Calendar keepsake hoop</figcaption></figure>
-        <figure class="tile wide"><img src="/images/naa-cheti-kala/lotus-lamps.jpg" alt="Glowing crochet lotus lamps" loading="lazy"><figcaption>Lotus lamps</figcaption></figure>
-        <figure class="tile"><img src="/images/naa-cheti-kala/crochet-sunflower.jpg" alt="Crochet sunflower" loading="lazy"><figcaption>Crochet sunflower</figcaption></figure>
-      </div>
-      <p class="gallery-note">See more on Instagram: <a href="https://www.instagram.com/naa_cheti_kala/" target="_blank" rel="noopener">@naa_cheti_kala</a></p>
+      <div class="filters" role="group" aria-label="Filter items"></div>
+      <div class="items" id="item-grid"></div>
+      <p class="shop-note">Looking for something else? <a href="#contact" data-order="Hi Naa Cheti Kala, I'd like a customised gift.">Ask for a custom gift</a> or see more on <a href="https://www.instagram.com/naa_cheti_kala/" target="_blank" rel="noopener">@naa_cheti_kala</a>.<br><small>Items marked "Sample design" show a reference photo (Unsplash). We make them by hand to your order.</small></p>
     </div>
   </section>
 
@@ -262,7 +283,7 @@
         <h2>Simple, <span class="accent">personal</span>, made to order</h2>
       </div>
       <div class="steps">
-        <div class="step"><h3>Share your idea</h3><p>Message us with the occasion, quantity and any photos or names to include.</p></div>
+        <div class="step"><h3>Pre-book on chat</h3><p>Tap Order and message us the item, occasion, date and any names or photos to include.</p></div>
         <div class="step"><h3>Get a quote</h3><p>We confirm the design, price and delivery date before we start.</p></div>
         <div class="step"><h3>We craft it</h3><p>Your order is made by hand, with progress photos shared along the way.</p></div>
         <div class="step"><h3>Shipped with love</h3><p>Carefully packed and shipped to your doorstep, wherever you are.</p></div>
@@ -274,9 +295,9 @@
     <div class="container">
       <span class="eyebrow">Let's create together</span>
       <h2>Order something handmade</h2>
-      <p>Tell us what you have in mind and we'll get back to you with ideas and a quote.</p>
+      <p>Birthday or any occasion, tell us what you have in mind and we'll get back to you with ideas and a quote.</p>
       <div class="btns">
-        <a href="mailto:support@urab.in?subject=Naa%20Cheti%20Kala%20order" class="btn btn-light" data-wa="Hi Naa Cheti Kala, I'd like to place an order.">Chat with us</a>
+        <a href="#contact" class="btn btn-light" data-order="Hi Naa Cheti Kala, I'd like to place an order."><svg class="ig-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor"/></svg><span class="chat-label">Chat on Instagram</span></a>
         <a href="mailto:support@urab.in?subject=Naa%20Cheti%20Kala%20order" class="btn btn-ghost">support@urab.in</a>
         <a href="https://www.instagram.com/naa_cheti_kala/" target="_blank" rel="noopener" class="btn btn-ghost">Instagram @naa_cheti_kala</a>
       </div>
@@ -296,21 +317,94 @@
     <p>&copy; <span id="year">2026</span> Naa Cheti Kala · URAB. All rights reserved.</p>
   </footer>
 
-  <a class="wa-float" href="#contact" data-wa="Hi Naa Cheti Kala, I have a question." aria-label="Chat with Naa Cheti Kala" hidden>
-    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.2.6 4.4 1.7 6.3L3 29l7.3-1.9c1.8 1 3.8 1.5 5.8 1.5 7 0 12.7-5.7 12.7-12.6S23 3 16 3zm0 23.1c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3 1.1 1.2-4.2-.3-.4c-1-1.6-1.5-3.5-1.5-5.4C5.4 9.8 10.2 5.1 16 5.1s10.6 4.7 10.6 10.5S21.8 26.1 16 26.1zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.9-1.7-2.2-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
-  </a>
+  <a class="chat-float" href="#contact" data-order="Hi Naa Cheti Kala, I have a question." aria-label="Chat with Naa Cheti Kala"><svg class="ig-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor"/></svg></a>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
-    // TODO: set the Naa Cheti Kala WhatsApp number (country code + number, no "+" or spaces, e.g. "919876543210").
-    // While empty, the order buttons fall back to email and the floating WhatsApp button stays hidden.
-    const WHATSAPP_NUMBER = '';
+    // Shop items. To add one: put the photo in images/naa-cheti-kala/ and add a line here.
+    // tags decide which filter buttons show the item.
+    // sample: true marks a free stock photo (Unsplash) of a design we make to order, not our own photo.
+    // Replace it with a real photo once Dhana makes one, then remove "sample: true".
+    const ITEMS = [
+      { name: 'Customised Birthday Hoop', img: 'birthday-embroidery-hoop.jpg', tags: ['Birthday', 'Embroidery'], desc: 'Name, age and theme hand-embroidered on a hoop. A birthday gift they will keep forever.' },
+      { name: 'Embroidered Portrait Hoop', img: 'embroidery-portraits.jpg', tags: ['Birthday', 'Embroidery'], desc: 'Your photo turned into a hand-stitched line portrait with florals. For couples, parents and families.' },
+      { name: 'Dad & Daughter Portrait Hoop', img: 'dad-daughter-portrait-hoops.jpg', tags: ['Birthday', 'Embroidery'], desc: 'Line-art hoops of dad and daughter moments with hand-stitched florals. A gift for Father\'s Day or his birthday.' },
+      { name: 'Calendar Keepsake Hoop', img: 'calendar-embroidery-hoop.jpg', tags: ['Birthday', 'Embroidery'], desc: 'Mark a birthday, anniversary or wedding date with names and a stitched calendar.' },
+      { name: 'Crochet Lotus Lamps', img: 'lotus-lamps.jpg', tags: ['Crochet', 'Festive'], desc: 'Glowing crochet lotus lamps for pooja rooms, festivals and gifting.' },
+      { name: 'Crochet Flower Lamp', img: 'crochet-flower-lamp.jpg', tags: ['Crochet'], desc: 'A warm crochet flower lamp with fairy lights. A cosy gift for any room.' },
+      { name: 'Crochet Lotus Ganapathi Setup', img: 'crochet-lotus-ganapathi.jpg', tags: ['Festive', 'Crochet'], desc: 'Handmade crochet lotus backdrop for Ganapathi and pooja setups.' },
+      { name: 'Evil-Eye Coasters', img: 'evil-eye-coasters.jpg', tags: ['Crochet'], desc: 'Set of crochet evil-eye coasters in blues. Colours can be customised.' },
+      { name: 'Crochet Sunflower', img: 'crochet-sunflower.jpg', tags: ['Crochet', 'Birthday'], desc: 'A forever-fresh crochet sunflower, single or as a bouquet.' },
+      { name: 'Diwali Pipe-Cleaner Décor', img: 'diwali-pipe-cleaner-art.jpg', tags: ['Festive'], desc: 'Diyas, torans, hangings and rangoli pieces made from pipe cleaners. Pre-book before Diwali.' },
+      { name: 'Crochet Flower Bouquet', img: 'samples/crochet-bouquet.jpg', sample: true, tags: ['Birthday', 'Crochet'], desc: 'A bouquet that never wilts. Choose the flowers and colours for birthdays and anniversaries.' },
+      { name: 'Crochet Bunny Soft Toy', img: 'samples/crochet-bunny.jpg', sample: true, tags: ['Birthday', 'Crochet'], desc: 'A soft, hand-crocheted bunny for kids\' birthdays and baby showers.' },
+      { name: 'Crochet Mini Toys', img: 'samples/crochet-mini-toys.jpg', sample: true, tags: ['Return Gifts', 'Crochet'], desc: 'Small crochet animals in your party colours. Lovely as return gifts.' },
+      { name: 'Smiley Flower Pots', img: 'samples/smiley-flower-pots.jpg', sample: true, tags: ['Return Gifts', 'Crochet'], desc: 'Cheerful crochet flowers in mini pots, ordered in bulk for birthdays and functions.' },
+      { name: 'Crochet Flower Pot', img: 'samples/crochet-flower-pot.jpg', sample: true, tags: ['Crochet'], desc: 'A forever-fresh crochet plant for desks and shelves. Colours customisable.' },
+      { name: 'Custom Gift Hamper', img: 'samples/gift-hamper.jpg', sample: true, tags: ['Birthday', 'Return Gifts'], desc: 'Handmade pieces packed together in a gift box for any occasion. Tell us the budget and theme.' }
+    ];
 
+    // Ordering: Instagram chat for now. Set the WhatsApp number (country code + number, no "+" or spaces,
+    // e.g. "919876543210") and every Order button switches to WhatsApp with the message pre-filled.
+    const WHATSAPP_NUMBER = '';
+    const INSTAGRAM_CHAT = 'https://ig.me/m/naa_cheti_kala';
+    const WA_SVG = '<svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.2.6 4.4 1.7 6.3L3 29l7.3-1.9c1.8 1 3.8 1.5 5.8 1.5 7 0 12.7-5.7 12.7-12.6S23 3 16 3zm0 23.1c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3 1.1 1.2-4.2-.3-.4c-1-1.6-1.5-3.5-1.5-5.4C5.4 9.8 10.2 5.1 16 5.1s10.6 4.7 10.6 10.5S21.8 26.1 16 26.1z"/></svg>';
+    const IG_SVG = document.querySelector('.ig-ico').outerHTML;
+    const ORDER_ICON = WHATSAPP_NUMBER ? WA_SVG : IG_SVG;
+
+    const esc = t => t.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const grid = document.getElementById('item-grid');
+    grid.innerHTML = ITEMS.map(it => `
+      <article class="item" data-tags="${it.tags.join(',')}">
+        <div class="item-img"><img src="/images/naa-cheti-kala/${it.img}" alt="${esc(it.name)}" loading="lazy"><span class="item-tag">${it.tags[0]}</span>${it.sample ? '<span class="item-sample">Sample design</span>' : ''}</div>
+        <div class="item-body">
+          <h3>${esc(it.name)}</h3>
+          <p>${esc(it.desc)}</p>
+          <span class="item-meta">${it.sample ? 'Made to order · Price on request' : 'Customisable · Price on request · Pre-book'}</span>
+          <a class="order-btn" href="#contact" data-order="Hi Naa Cheti Kala, I'd like to order: ${esc(it.name)}">${ORDER_ICON}Order</a>
+        </div>
+      </article>`).join('');
+
+    const filterBar = document.querySelector('.filters');
+    const tags = ['All', ...new Set(ITEMS.flatMap(it => it.tags))];
+    filterBar.innerHTML = tags.map((t, i) => `<button type="button" class="${i ? '' : 'active'}">${t}</button>`).join('');
+    filterBar.addEventListener('click', e => {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+      filterBar.querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
+      grid.querySelectorAll('.item').forEach(card => {
+        card.hidden = btn.textContent !== 'All' && !card.dataset.tags.split(',').includes(btn.textContent);
+      });
+    });
+
+    const toast = document.getElementById('toast');
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(showToast.t);
+      showToast.t = setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+
+    document.querySelectorAll('[data-order]').forEach(el => {
+      el.href = WHATSAPP_NUMBER
+        ? 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(el.dataset.order)
+        : INSTAGRAM_CHAT;
+      el.target = '_blank';
+      el.rel = 'noopener';
+    });
     if (WHATSAPP_NUMBER) {
-      document.querySelectorAll('[data-wa]').forEach(el => {
-        el.href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(el.dataset.wa);
-        el.target = '_blank';
-        el.rel = 'noopener';
-        el.hidden = false;
+      const float = document.querySelector('.chat-float');
+      float.classList.add('wa');
+      float.innerHTML = WA_SVG;
+      document.querySelectorAll('.chat-label').forEach(l => { l.textContent = 'Chat on WhatsApp'; l.previousElementSibling.outerHTML = WA_SVG; });
+    } else {
+      // Instagram chat links can't pre-fill text, so copy the message for the customer to paste.
+      document.addEventListener('click', e => {
+        const el = e.target.closest('[data-order]');
+        if (!el || !navigator.clipboard) return;
+        navigator.clipboard.writeText(el.dataset.order)
+          .then(() => showToast('Message copied. Paste it in the Instagram chat to order.'))
+          .catch(() => {});
       });
     }
     document.getElementById('year').textContent = new Date().getFullYear();
