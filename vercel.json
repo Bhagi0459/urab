@@ -7,8 +7,12 @@
     }
   ],
   "redirects": [
-    { "source": "/gk-signature", "destination": "https://gksignature.vercel.app/", "permanent": false },
+    { "source": "/gk-signature", "destination": "/gk-signature/", "permanent": true },
     { "source": "/na-chethi-kala", "destination": "/naa-cheti-kala", "permanent": true },
     { "source": "/nck", "destination": "/naa-cheti-kala", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/gk-signature/", "destination": "https://gksignature.vercel.app/" },
+    { "source": "/gk-signature/:path*", "destination": "https://gksignature.vercel.app/:path*" }
   ]
 }
