@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sai Clicks | Fashion, Wedding &amp; Portrait Photography in Hyderabad – A URAB Brand</title>
+  <meta name="description" content="Sai Clicks by Purnasai: fashion, wedding, event and portrait photography in Hyderabad. Capturing your special moments. A URAB brand.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://urab.in/sai-clicks">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sai Clicks by URAB">
+  <meta property="og:title" content="Sai Clicks | Fashion, Wedding &amp; Portrait Photography">
+  <meta property="og:description" content="Capturing your special moments. Fashion, weddings, events and portraits in Hyderabad.">
+  <meta property="og:image" content="https://urab.in/images/sai-clicks/logo-round.jpg">
+  <meta property="og:url" content="https://urab.in/sai-clicks">
+  <meta property="og:locale" content="en_IN">
+
+  <meta name="theme-color" content="#0a0806">
+  <link rel="icon" type="image/jpeg" href="/images/sai-clicks/icon-192.jpg">
+  <link rel="apple-touch-icon" href="/images/sai-clicks/icon-192.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/images/sai-clicks/logo-gold.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Sai Clicks",
+    "description": "Fashion, wedding, event and portrait photography in Hyderabad by Purnasai.",
+    "url": "https://urab.in/sai-clicks",
+    "image": "https://urab.in/images/sai-clicks/logo-round.jpg",
+    "logo": "https://urab.in/images/sai-clicks/logo-round.jpg",
+    "email": "Saiclicks76@gmail.com",
+    "slogan": "Capturing Your Special Moments",
+    "founder": { "@type": "Person", "name": "Purnasai" },
+    "areaServed": { "@type": "City", "name": "Hyderabad" },
+    "sameAs": ["https://www.instagram.com/sai__clicks/"],
+    "parentOrganization": { "@id": "https://urab.in/#org", "name": "URAB" }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0a0806;
+      --bg-2: #120e0a;
+      --card: #17120d;
+      --line: #2e251b;
+      --ink: #f5ecdd;
+      --muted: #b9aa92;
+      --gold: #d4a54f;
+      --gold-light: #f3d58e;
+      --gold-grad: linear-gradient(135deg, #fff1c4 0%, #f3d58e 25%, #d4a54f 55%, #9c6e24 100%);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body { font-family: "Poppins", system-ui, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.65; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .container { width: min(1160px, 100% - 32px); margin-inline: auto; }
+    h1, h2, h3 { font-family: "Cormorant Garamond", serif; font-weight: 600; line-height: 1.1; }
+    .gold { background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .script { font-family: "Great Vibes", cursive; font-weight: 400; color: var(--gold-light); }
+    .eyebrow { display: inline-block; font-size: .75rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+
+    /* ---------- Nav ---------- */
+    .nav { position: fixed; inset: 0 0 auto 0; z-index: 50; transition: background .3s, box-shadow .3s; }
+    .nav.scrolled { background: rgba(10, 8, 6, .92); backdrop-filter: blur(10px); box-shadow: 0 4px 24px rgba(0,0,0,.5); }
+    .nav .container { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 10px rgba(212, 165, 79, .3); }
+    .brand span { font-family: "Cormorant Garamond", serif; font-size: 1.45rem; font-weight: 700; }
+    .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: .9rem; color: #e6dac6; }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-cta { background: var(--gold-grad); color: #1a1208 !important; padding: 9px 18px; border-radius: 999px; font-weight: 600; }
+    .urab-link img { height: 38px; width: auto; }
+    @media (max-width: 760px) { .nav-links .hide-sm { display: none; } .nav-links { gap: 14px; } .brand span { font-size: 1.2rem; } }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; min-height: 100svh; display: grid; place-items: center; text-align: center; overflow: hidden; padding: 100px 0 70px; }
+    .hero-slides, .hero-slides div { position: absolute; inset: 0; }
+    .hero-slides div { background-size: cover; background-position: center 30%; opacity: 0; animation: heroSlide 24s infinite; }
+    .hero-slides div:nth-child(1) { background-image: url("/images/sai-clicks/portfolio-03.jpg"); animation-delay: 0s; }
+    .hero-slides div:nth-child(2) { background-image: url("/images/sai-clicks/portfolio-09.jpg"); animation-delay: 6s; }
+    .hero-slides div:nth-child(3) { background-image: url("/images/sai-clicks/portfolio-06.jpg"); animation-delay: 12s; }
+    .hero-slides div:nth-child(4) { background-image: url("/images/sai-clicks/portfolio-12.jpg"); animation-delay: 18s; }
+    @keyframes heroSlide { 0% { opacity: 0; transform: scale(1.12); } 5% { opacity: .38; } 25% { opacity: .38; } 32% { opacity: 0; transform: scale(1); } 100% { opacity: 0; } }
+    .hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, rgba(10,8,6,.35) 0%, rgba(10,8,6,.85) 60%, #0a0806 100%); }
+    .hero-inner { position: relative; z-index: 2; }
+    .hero-logo { width: auto; height: auto; max-width: min(540px, 86vw); max-height: 50svh; object-fit: contain; margin: 0 auto; filter: drop-shadow(0 12px 30px rgba(0, 0, 0, .7)) drop-shadow(0 0 18px rgba(212, 165, 79, .12)); animation: glow 5s ease-in-out infinite alternate; }
+    @keyframes glow { to { filter: drop-shadow(0 12px 30px rgba(0, 0, 0, .7)) drop-shadow(0 0 28px rgba(243, 213, 142, .22)); } }
+    .hero .tag { margin: 18px auto 30px; color: var(--muted); letter-spacing: .28em; text-transform: uppercase; font-size: .82rem; }
+    .btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: .95rem; transition: transform .2s, box-shadow .2s; border: 1.5px solid transparent; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: var(--gold-grad); color: #1a1208; box-shadow: 0 10px 30px rgba(212, 165, 79, .3); }
+    .btn-line { border-color: var(--gold); color: var(--gold-light); background: rgba(255,255,255,.03); }
+    .btn svg { width: 18px; height: 18px; }
+    .scroll-hint { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); z-index: 2; color: var(--gold); text-decoration: none; font-size: 1.3rem; animation: bob 2s ease-in-out infinite; }
+    @keyframes bob { 50% { transform: translate(-50%, 6px); } }
+
+    /* ---------- Sections ---------- */
+    section { padding: 90px 0; }
+    .alt { background: var(--bg-2); border-block: 1px solid var(--line); }
+    .section-head { text-align: center; max-width: 660px; margin: 0 auto 48px; }
+    .section-head h2 { font-size: clamp(2rem, 4.5vw, 3rem); margin: 10px 0 12px; }
+    .section-head p { color: var(--muted); }
+    .divider { width: 90px; height: 2px; margin: 16px auto 0; background: var(--gold-grad); }
+
+    /* ---------- Services ---------- */
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    @media (max-width: 860px) { .services { grid-template-columns: 1fr; } }
+    .service { position: relative; overflow: hidden; border-radius: var(--radius); background: var(--card); border: 1px solid var(--line); transition: transform .3s, border-color .3s; }
+    .service:hover { transform: translateY(-6px); border-color: var(--gold); }
+    .service-img { height: 280px; overflow: hidden; }
+    .service-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; transition: transform .6s; }
+    .service:hover .service-img img { transform: scale(1.06); }
+    .service-body { padding: 22px 24px 26px; }
+    .service-body h3 { font-size: 1.6rem; display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .service-body h3 svg { width: 26px; height: 26px; stroke: var(--gold); flex: none; }
+    .service-body p { color: var(--muted); font-size: .93rem; }
+
+    /* ---------- Portfolio ---------- */
+    .masonry { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 860px) { .masonry { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+    .shot { margin: 0; position: relative; aspect-ratio: 3 / 4; border-radius: 14px; overflow: hidden; cursor: zoom-in; border: 1px solid var(--line); }
+    .shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s, filter .6s; }
+    .shot:hover img { transform: scale(1.04); filter: brightness(1.08); }
+    .shot::after { content: ""; position: absolute; inset: 0; border-radius: 14px; box-shadow: inset 0 0 0 0 var(--gold); transition: box-shadow .3s; }
+    .shot:hover::after { box-shadow: inset 0 0 0 2px var(--gold); }
+    .shot figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 16px 14px; font-size: .82rem; letter-spacing: .08em; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.75)); opacity: 0; transition: opacity .3s; }
+    .shot:hover figcaption { opacity: 1; }
+    .more { text-align: center; margin-top: 30px; color: var(--muted); font-size: .9rem; }
+    .more a { color: var(--gold-light); }
+
+
+    @media (max-width: 860px) { .ideas { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+    .idea { margin: 0; position: relative; aspect-ratio: 3 / 4; border-radius: 14px; overflow: hidden; border: 1px dashed rgba(212, 165, 79, .45); }
+    .idea img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.9); }
+    .idea figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 14px 12px; background: linear-gradient(transparent, rgba(0,0,0,.85)); }
+    .idea b { display: block; font-size: .92rem; color: #fff; }
+    .idea small { display: block; font-size: .7rem; color: #cbbfa9; margin-top: 2px; }
+    .idea small a { color: var(--gold-light); }
+    .soon-tile { display: grid; place-items: center; text-align: center; text-decoration: none; cursor: pointer; padding: 20px; background: radial-gradient(circle at 50% 35%, rgba(212,165,79,.18), transparent 65%), var(--card); border-style: dashed !important; border-color: rgba(212,165,79,.5) !important; }
+    .soon-tile span { display: grid; gap: 8px; color: var(--muted); font-size: .9rem; }
+    .soon-tile b { font-family: "Cormorant Garamond", serif; font-size: 1.6rem; color: var(--ink); line-height: 1.15; }
+    .soon-tile em { font-style: normal; color: var(--gold-light); font-weight: 600; }
+    /* ---------- Process ---------- */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: step; }
+    @media (max-width: 900px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+    .step { position: relative; padding: 30px 22px 24px; border-radius: var(--radius); background: var(--card); border: 1px solid var(--line); }
+    .step::before { counter-increment: step; content: "0" counter(step); font-family: "Cormorant Garamond", serif; font-size: 2.4rem; font-weight: 700; line-height: 1; background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .step h3 { font-size: 1.35rem; margin: 10px 0 6px; }
+    .step p { color: var(--muted); font-size: .9rem; }
+
+    /* ---------- URAB tie-in ---------- */
+    .tie { display: grid; grid-template-columns: 1fr 1.1fr; gap: 0; border-radius: 24px; overflow: hidden; border: 1px solid var(--line); background: var(--card); }
+    @media (max-width: 860px) { .tie { grid-template-columns: 1fr; } }
+    .tie-img { position: relative; min-height: 320px; display: grid; grid-template-columns: 1fr 1fr; }
+    .tie-img img { width: 100%; height: 100%; object-fit: cover; }
+    .tie-img .plus { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font-size: 1.6rem; font-weight: 700; color: #1a1208; background: var(--gold-grad); box-shadow: 0 8px 24px rgba(0,0,0,.6); }
+    .tie-body { padding: 40px 38px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+    .tie-body h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+    .tie-body p { color: var(--muted); }
+
+    /* ---------- Book ---------- */
+    .book { position: relative; text-align: center; overflow: hidden; background: radial-gradient(ellipse at 50% 0%, rgba(212,165,79,.18), transparent 60%), var(--bg); }
+    .book h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin: 10px 0 6px; }
+    .book .script { font-size: clamp(1.8rem, 4.5vw, 2.6rem); display: block; margin-bottom: 18px; }
+    .book p { color: var(--muted); max-width: 560px; margin: 0 auto 28px; }
+    .btn-ig { color: #fff; background: linear-gradient(45deg, #f09433, #dc2743 50%, #bc1888); }
+
+    /* ---------- Footer ---------- */
+    footer { border-top: 1px solid var(--line); padding: 50px 16px 34px; text-align: center; color: var(--muted); font-size: .88rem; }
+    .follow { margin: 0 auto 30px; max-width: 1000px; }
+    .follow h3 { font-size: 1.5rem; margin-bottom: 18px; color: var(--ink); }
+    .follow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    @media (max-width: 900px) { .follow-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .follow-grid { grid-template-columns: 1fr; } }
+    .follow-card { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 18px 14px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); text-decoration: none; transition: transform .2s, border-color .2s; }
+    .follow-card:hover { transform: translateY(-3px); border-color: #d6249f; }
+    .follow-card img { width: 66px; height: 66px; border-radius: 50%; object-fit: cover; background: #fff; border: 1px solid var(--line); }
+    .follow-card img.dark { object-fit: contain; padding: 5px; background: #14110e; }
+    .follow-card strong { color: var(--ink); font-size: .9rem; font-weight: 600; display: block; }
+    .follow-card small { color: var(--muted); font-size: .78rem; }
+    .follow-card em { font-style: normal; display: inline-flex; align-items: center; gap: 5px; padding: 6px 15px; border-radius: 999px; color: #fff; font-size: .78rem; font-weight: 600; background: linear-gradient(45deg, #f09433, #dc2743 50%, #bc1888); }
+    .follow-card em svg { width: 14px; height: 14px; }
+    footer .urab { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; text-decoration: none; color: var(--ink); margin: 10px 0 8px; }
+    footer .urab img { height: 70px; width: auto; }
+
+    /* ---------- Lightbox ---------- */
+    .lightbox { position: fixed; inset: 0; z-index: 95; display: none; align-items: center; justify-content: center; padding: 56px 16px 70px; background: rgba(5, 4, 3, .95); }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: calc(100svh - 130px); border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+    .lightbox button { position: absolute; width: 46px; height: 46px; border: 1px solid rgba(212,165,79,.5); border-radius: 50%; cursor: pointer; font-size: 1.4rem; color: var(--gold-light); background: rgba(255,255,255,.06); }
+    .lb-close { top: 14px; right: 14px; }
+    .lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+    .lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
+    @media (max-width: 600px) { .lb-prev, .lb-next { top: auto; bottom: 14px; transform: none; } .lb-prev { left: calc(50% - 56px); } .lb-next { right: calc(50% - 56px); } }
+
+    .toast { position: fixed; left: 50%; bottom: 26px; transform: translate(-50%, 20px); z-index: 96; max-width: calc(100% - 32px); padding: 12px 18px; border-radius: 12px; background: #f5ecdd; color: #1a1208; font-size: .88rem; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+    /* ---------- Shutter intro (built by script, once per visit) ---------- */
+    @property --hole { syntax: "<length>"; inherits: false; initial-value: 0px; }
+    .shutter { position: fixed; inset: 0; z-index: 200; cursor: pointer; background: #050403; display: grid; place-items: center;
+      -webkit-mask: radial-gradient(circle at 50% 50%, transparent var(--hole), #000 calc(var(--hole) + 1px));
+              mask: radial-gradient(circle at 50% 50%, transparent var(--hole), #000 calc(var(--hole) + 1px));
+      transition: --hole 1.1s cubic-bezier(.7, 0, .2, 1); }
+    .shutter .iris { position: absolute; width: min(150vmin, 1100px); height: min(150vmin, 1100px); transition: transform 1.1s cubic-bezier(.7, 0, .2, 1), opacity 1.1s ease; }
+    .shutter .mark { position: relative; z-index: 2; display: grid; justify-items: center; gap: 14px; text-align: center; transition: opacity .3s; }
+    .shutter .mark img { width: min(190px, 46vw); border-radius: 50%; box-shadow: 0 0 40px rgba(212, 165, 79, .3); animation: markIn 1s ease both; }
+    .shutter .mark span { font-size: .72rem; letter-spacing: .4em; text-transform: uppercase; color: var(--gold); animation: markIn 1s ease .25s both; }
+    @keyframes markIn { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
+    .shutter .flash { position: absolute; inset: 0; z-index: 3; background: #fff; opacity: 0; pointer-events: none; }
+    .shutter.snap .flash { animation: flash .45s ease-out; }
+    @keyframes flash { 0% { opacity: 0; } 15% { opacity: .9; } 100% { opacity: 0; } }
+    .shutter.open { --hole: 120vmax; pointer-events: none; }
+    .shutter.open .iris { transform: rotate(70deg) scale(1.6); opacity: 0; }
+    .shutter.open .mark { opacity: 0; }
+    @media (prefers-reduced-motion: reduce) { .hero-slides div, .hero-logo, .scroll-hint { animation: none !important; } .hero-slides div:first-child { opacity: .38; } }
+  </style>
+</head>
+<body>
+  <script>
+    // Shutter intro: an aperture closes on the logo, a flash fires, and the iris opens onto the page.
+    // Once per visit, skipped for reduced motion; opens ~1.1s after the HTML is ready (not after every image), tap to skip.
+    (function () {
+      var seen = false;
+      try { seen = sessionStorage.getItem('sai-shutter') === '1'; sessionStorage.setItem('sai-shutter', '1'); } catch (e) {}
+      if (seen || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+      var blades = '';
+      for (var i = 0; i < 8; i++) {
+        blades += '<path transform="rotate(' + (i * 45) + ')" d="M0 -500 L380 -330 L36 -58 Z" fill="url(#bl)" stroke="#d4a54f" stroke-width="2" stroke-opacity=".55"/>';
+      }
+      var el = document.createElement('div');
+      el.className = 'shutter';
+      el.setAttribute('aria-hidden', 'true');
+      el.innerHTML = '<svg class="iris" viewBox="-500 -500 1000 1000"><defs><linearGradient id="bl" x1="0" y1="0" x2="1" y2="1">' +
+        '<stop offset="0" stop-color="#1c160f"/><stop offset=".6" stop-color="#0d0a07"/><stop offset="1" stop-color="#2a2014"/></linearGradient></defs>' + blades +
+        '<circle r="470" fill="none" stroke="#d4a54f" stroke-opacity=".35" stroke-width="3"/></svg>' +
+        '<div class="mark"><img src="/images/sai-clicks/logo-round.jpg" alt=""><span>Sai Clicks</span></div><div class="flash"></div>';
+      document.body.appendChild(el);
+      document.documentElement.style.overflow = 'hidden';
+      var done = false;
+      function open() {
+        if (done) return;
+        done = true;
+        el.classList.add('snap');
+        setTimeout(function () { el.classList.add('open'); document.documentElement.style.overflow = ''; }, 140);
+        setTimeout(function () { el.remove(); }, 1500);
+      }
+      el.addEventListener('click', open);
+      addEventListener('keydown', open, { once: true });
+      document.addEventListener('DOMContentLoaded', function () { setTimeout(open, 1100); });
+      setTimeout(open, 3500);
+    })();
+  </script>
+
+  <nav class="nav" id="nav">
+    <div class="container">
+      <a href="/sai-clicks" class="brand"><img src="/images/sai-clicks/logo-round.jpg" alt="Sai Clicks logo"><span class="gold">Sai Clicks</span></a>
+      <ul class="nav-links">
+        <li class="hide-sm"><a href="#portfolio">Portfolio</a></li>
+        <li class="hide-sm"><a href="#beyond">More work</a></li>
+        <li class="hide-sm"><a href="#services">Services</a></li>
+        <li class="hide-sm"><a href="#process">How it works</a></li>
+        <li><a href="/" class="urab-link" title="Back to URAB"><img src="/images/logo.png" alt="URAB"></a></li>
+        <li><a href="#book" class="nav-cta">Book</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-slides" aria-hidden="true"><div></div><div></div><div></div><div></div></div>
+    <div class="hero-inner container">
+      <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Sai Clicks – Fashion, Events and Portrait Photography</h1>
+      <img class="hero-logo" src="/images/sai-clicks/logo-gold.webp" alt="Sai Clicks – Fashion | Events | Portraits – Capturing Your Special Moments" width="1200" height="802">
+      <p class="tag">Fashion · Weddings · Portraits · Hyderabad</p>
+      <div class="btns">
+        <a href="#portfolio" class="btn btn-gold">View Portfolio</a>
+        <a href="#book" class="btn btn-line">Book a Shoot</a>
+      </div>
+    </div>
+    <a href="#services" class="scroll-hint" aria-label="Scroll down">⌄</a>
+  </header>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What we shoot</span>
+        <h2>Every frame, <span class="gold">made to remember</span></h2>
+        <p>From fashion looks to the biggest day of your life, Sai Clicks captures natural, glowing photos you'll want to frame.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="services">
+        <article class="service">
+          <div class="service-img"><img src="/images/sai-clicks/portfolio-09.jpg" alt="Saree fashion shoot by Sai Clicks" loading="lazy"></div>
+          <div class="service-body">
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l3 4-3 2-3-2 3-4z"/><path d="M9 7L5 9l2 12h10l2-12-4-2"/></svg>Fashion</h3>
+            <p>Outfit, saree and lookbook shoots with guided posing, flowing fabric and flattering outdoor light.</p>
+          </div>
+        </article>
+        <article class="service">
+          <div class="service-img"><img src="/images/sai-clicks/portfolio-20.jpg" alt="Packed floodlit cricket stadium on match night, by Sai Clicks" loading="lazy" style="object-position:center 60%"></div>
+          <div class="service-body">
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l1.5 4M16 3l-1.5 4"/><circle cx="12" cy="14" r="6"/><path d="M12 11v3l2 1"/></svg>Weddings &amp; Events</h3>
+            <p>Weddings, baby showers, birthdays, family functions and live events like match nights, from candid moments to the big crowd shot.</p>
+          </div>
+        </article>
+        <article class="service">
+          <div class="service-img"><img src="/images/sai-clicks/portfolio-10.jpg" alt="Studio portrait by Sai Clicks" loading="lazy"></div>
+          <div class="service-body">
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="13.5" r="3.5"/></svg>Portraits</h3>
+            <p>Studio and outdoor portraits for individuals, couples and families that feel relaxed and look like you.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Portfolio</span>
+        <h2>Moments, <span class="gold">captured</span></h2>
+        <p>Fashion shoots, studio portraits, match nights and sunset silhouettes from recent work. Tap any photo to see it larger.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="masonry" id="gallery">
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-03.jpg" alt="Outdoor portrait session, twirling dress" loading="lazy" width="1080" height="1440"><figcaption>Outdoor portrait session</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-10.jpg" alt="Studio portrait with a warm backlight flare" loading="lazy" width="1080" height="1440"><figcaption>Studio portrait</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-15.jpg" alt="Men’s fashion shoot on a sea rock" loading="lazy" width="1080" height="1440"><figcaption>Beach fashion shoot</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-09.jpg" alt="Saree drape fashion shoot" loading="lazy" width="1080" height="1440"><figcaption>Saree drape shoot</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-20.jpg" alt="Packed floodlit cricket stadium on match night" loading="lazy" width="1440" height="1436"><figcaption>Match night</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-12.jpg" alt="Group silhouette on a cliff at sunset" loading="lazy" width="1080" height="1440"><figcaption>Sunset silhouettes</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-17.jpg" alt="Walking shot with a reflection on wet sand" loading="lazy" width="1080" height="1440"><figcaption>Beach fashion shoot</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-06.jpg" alt="Smiling portrait by a tree" loading="lazy" width="1080" height="1440"><figcaption>Outdoor portrait session</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-11.jpg" alt="Low-key studio portrait against a patterned backdrop" loading="lazy" width="1080" height="1440"><figcaption>Low-key studio portrait</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-16.jpg" alt="Over-the-shoulder look by the waves" loading="lazy" width="1080" height="1440"><figcaption>Beach fashion shoot</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-01.jpg" alt="Portrait by a bamboo fence" loading="lazy" width="1080" height="1440"><figcaption>Outdoor portrait session</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-14.jpg" alt="Silhouette with open arms at dusk above the city lights" loading="lazy" width="1080" height="1440"><figcaption>Dusk silhouette</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-19.jpg" alt="Fan watching the floodlit ground from the stands" loading="lazy" width="1440" height="1436"><figcaption>Match night</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-07.jpg" alt="Close portrait with soft background" loading="lazy" width="1080" height="1440"><figcaption>Outdoor portrait session</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-18.jpg" alt="Sea-side portrait in a red shirt" loading="lazy" width="1080" height="1440"><figcaption>Beach fashion shoot</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-04.jpg" alt="Candid pose by a fence" loading="lazy" width="1080" height="1440"><figcaption>Outdoor portrait session</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-13.jpg" alt="Silhouette sitting on a cliff edge at twilight" loading="lazy" width="1080" height="1440"><figcaption>Twilight silhouette</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-08.jpg" alt="Portrait beside a tree" loading="lazy" width="1080" height="1440"><figcaption>Outdoor portrait session</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-02.jpg" alt="Side profile portrait" loading="lazy" width="1080" height="1440"><figcaption>Outdoor portrait session</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/portfolio-05.jpg" alt="Relaxed portrait by a fence" loading="lazy" width="1080" height="1440"><figcaption>Outdoor portrait session</figcaption></figure>
+        <a class="shot soon-tile" href="#book"><span><b>More galleries coming soon</b>Wedding &amp; event albums are on the way.<em>DM to see full albums →</em></span></a>
+      </div>
+      <p class="more">See more on Instagram: <a href="https://www.instagram.com/sai__clicks/" target="_blank" rel="noopener">@sai__clicks</a></p>
+    </div>
+  </section>
+
+  <section id="beyond">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Beyond portraits</span>
+        <h2>Streets, temples, <span class="gold">products &amp; more</span></h2>
+        <p>Street stories from Hyderabad, temple and travel frames from Yadagirigutta and Hampi, and product and food shoots for brands. Tap any photo to see it larger.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="masonry" id="work">
+        <figure class="shot"><img src="/images/sai-clicks/work/street-vendor.jpg" alt="Street vendor waiting for customers, Hyderabad" loading="lazy" width="1080" height="1440"><figcaption>Street · 24 Hour Project</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/work/temple-gopuram.jpg" alt="Yadagirigutta temple gopuram framed through a gateway" loading="lazy" width="1080" height="1440"><figcaption>Temples · Yadagirigutta</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/work/product-sneaker-red.jpg" alt="Sneaker product shot under red light" loading="lazy" width="1080" height="1440"><figcaption>Product</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/work/hampi-sunburst.jpg" alt="Sun bursting over an ancient Hampi temple" loading="lazy" width="1080" height="1440"><figcaption>Travel · Hampi</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/work/street-watchman.jpg" alt="Watch seller at his street stall, Hyderabad" loading="lazy" width="1080" height="1440"><figcaption>Street · 24 Hour Project</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/work/golden-vimana.jpg" alt="Golden vimana of Yadagirigutta temple" loading="lazy" width="1080" height="1440"><figcaption>Temples · Yadagirigutta</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/work/hampi-monkeys.jpg" alt="Mother and baby monkey at Hampi" loading="lazy" width="1080" height="1440"><figcaption>Wildlife · Hampi</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/work/product-sneakers.jpg" alt="White sneakers product shoot" loading="lazy" width="1080" height="1440"><figcaption>Product</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/work/temple-tower.jpg" alt="Carved temple tower, Yadagirigutta" loading="lazy" width="1080" height="1440"><figcaption>Temples · Yadagirigutta</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/work/food-chocolate.jpg" alt="Chocolate cookie food photography" loading="lazy" width="1080" height="1440"><figcaption>Food</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/work/hampi-temple.jpg" alt="Virupaksha temple tower, Hampi" loading="lazy" width="1080" height="1440"><figcaption>Travel · Hampi</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/work/temple-gate.jpg" alt="Golden doors of Yadagirigutta temple" loading="lazy" width="1080" height="1440"><figcaption>Temples · Yadagirigutta</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/work/product-sneakers-dark.jpg" alt="Sneakers on a dark backdrop" loading="lazy" width="1080" height="1440"><figcaption>Product</figcaption></figure>
+        <figure class="shot"><img src="/images/sai-clicks/work/hampi-monkey.jpg" alt="Monkey resting on a carved pillar, Hampi" loading="lazy" width="1080" height="1440"><figcaption>Wildlife · Hampi</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How it works</span>
+        <h2>From hello to <span class="gold">your photos</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Say hello</h3><p>DM or email us with the occasion, date, place and the look you have in mind.</p></div>
+        <div class="step"><h3>Plan the shoot</h3><p>We suggest locations, timing and outfits, and confirm the package and price.</p></div>
+        <div class="step"><h3>Shoot day</h3><p>Relaxed, guided posing so you look natural and confident in every frame.</p></div>
+        <div class="step"><h3>Edited photos</h3><p>Every selected photo is hand-edited and delivered to you to keep and share.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container">
+      <div class="tie">
+        <div class="tie-img">
+          <img src="/gk-signature/images/setup-full.jpg" alt="Baby shower décor by GK Signature" loading="lazy">
+          <img src="/images/sai-clicks/portfolio-03.jpg" alt="Portrait by Sai Clicks" loading="lazy" style="object-position:center 20%">
+          <span class="plus" aria-hidden="true">+</span>
+        </div>
+        <div class="tie-body">
+          <span class="eyebrow">Part of the URAB family</span>
+          <h2>Décor <span class="gold">+</span> photography, one booking</h2>
+          <p>Planning a baby shower, birthday, haldi or naming ceremony with GK Signature Events • Decors? Add Sai Clicks so every beautifully styled moment is captured too.</p>
+          <div class="btns" style="justify-content:flex-start">
+            <a href="/#combos" class="btn btn-gold">See Celebration Combos</a>
+            <a href="/gk-signature/" class="btn btn-line">Visit GK Signature</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" class="book">
+    <div class="container">
+      <span class="eyebrow">Book a shoot</span>
+      <h2>Let's create something <span class="gold">beautiful</span></h2>
+      <span class="script">Capturing Your Special Moments</span>
+      <p>Tell us the occasion, date and place. We'll reply with ideas, availability and a quote.</p>
+      <div class="btns">
+        <a class="btn btn-ig" href="https://ig.me/m/sai__clicks" target="_blank" rel="noopener" data-ig="Hi Sai Clicks, I'd like to book a photoshoot.">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor"/></svg>DM on Instagram</a>
+        <a class="btn btn-line" href="mailto:Saiclicks76@gmail.com?subject=Photoshoot%20enquiry%20(via%20urab.in)">✉ Saiclicks76@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="follow">
+      <h3>Follow us on Instagram</h3>
+      <div class="follow-grid">
+        <a class="follow-card" href="https://www.instagram.com/urabindia/" target="_blank" rel="noopener"><img class="dark" src="/images/logo.png" alt="URAB logo" loading="lazy"><span><strong>URAB</strong><small>@urabindia</small></span><em>Follow</em></a>
+        <a class="follow-card" href="https://www.instagram.com/naa_cheti_kala/" target="_blank" rel="noopener"><img src="/images/naa-cheti-kala/logo.jpg" alt="Naa Cheti Kala logo" loading="lazy"><span><strong>Naa Cheti Kala</strong><small>@naa_cheti_kala</small></span><em>Follow</em></a>
+        <a class="follow-card" href="https://www.instagram.com/gksignatureevents/" target="_blank" rel="noopener"><img src="/images/gk-signature-logo.png" alt="GK Signature logo" loading="lazy"><span><strong>GK Signature Events • Decors</strong><small>@gksignatureevents</small></span><em>Follow</em></a>
+        <a class="follow-card" href="https://www.instagram.com/sai__clicks/" target="_blank" rel="noopener"><img src="/images/sai-clicks/logo-round.jpg" alt="Sai Clicks logo" loading="lazy"><span><strong>Sai Clicks</strong><small>@sai__clicks</small></span><em>Follow</em></a>
+      </div>
+    </div>
+    <a href="/" class="urab"><img src="/images/logo.png" alt="URAB">Part of the URAB family</a>
+    <p>&copy; <span id="year">2026</span> Sai Clicks · URAB. All rights reserved.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Solid nav once the visitor scrolls past the top
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', scrollY > 40);
+    addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Instagram chat links can't pre-fill text, so copy the message for the visitor to paste.
+    const toast = document.getElementById('toast');
+    document.addEventListener('click', e => {
+      const el = e.target.closest('[data-ig]');
+      if (!el || !navigator.clipboard) return;
+      navigator.clipboard.writeText(el.dataset.ig).then(() => {
+        toast.textContent = 'Message copied. Paste it in the Instagram chat.';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 4000);
+      }).catch(() => {});
+    });
+
+    // Photo popup for the portfolio
+    const lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Photo viewer');
+    lb.innerHTML = '<button class="lb-close" aria-label="Close">✕</button><button class="lb-prev" aria-label="Previous photo">‹</button><button class="lb-next" aria-label="Next photo">›</button><img alt="">';
+    document.body.appendChild(lb);
+    const shots = [...document.querySelectorAll('#gallery img, #work img')];
+    const lbImg = lb.querySelector('img');
+    let idx = 0;
+    const show = i => { idx = (i + shots.length) % shots.length; lbImg.src = shots[idx].src; lbImg.alt = shots[idx].alt; };
+    const close = () => { lb.classList.remove('open'); document.body.style.overflow = ''; };
+    shots.forEach((img, i) => img.closest('.shot').addEventListener('click', () => { show(i); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }));
+    lb.addEventListener('click', e => {
+      if (e.target.closest('.lb-prev')) show(idx - 1);
+      else if (e.target.closest('.lb-next')) show(idx + 1);
+      else if (e.target === lb || e.target.closest('.lb-close')) close();
+    });
+    addEventListener('keydown', e => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(idx - 1);
+      if (e.key === 'ArrowRight') show(idx + 1);
+    });
+  </script>
+</body>
+</html>

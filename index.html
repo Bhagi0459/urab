@@ -37,7 +37,8 @@
     "email": "support@urab.in",
     "subOrganization": [
       { "@type": "Store", "name": "Naa Cheti Kala", "url": "https://urab.in/naa-cheti-kala", "description": "Handmade gifts and home décor, shipped anywhere" },
-      { "@type": "EventPlanner", "name": "GK Signature Events • Decors", "url": "https://gksignature.vercel.app/", "description": "Event planning and decoration in Hyderabad" }
+      { "@type": "EventPlanner", "name": "GK Signature Events • Decors", "url": "https://gksignature.vercel.app/", "description": "Event planning and decoration in Hyderabad" },
+      { "@type": "ProfessionalService", "name": "Sai Clicks", "url": "https://urab.in/sai-clicks", "description": "Fashion, wedding and portrait photography in Hyderabad" }
     ]
   }
   </script>
@@ -106,6 +107,9 @@
     .art-nck .brand-logo { border: 4px solid #fff; }
     .art-gk { color: #fff; background: radial-gradient(circle at 50% 40%, #3a2a1c 0, #1a130d 60%, #0f0b08 100%); }
     .art-gk .brand-logo { border: 3px solid #d4a94f; }
+    .art-sai { color: #fff; background: radial-gradient(circle at 50% 40%, #2b2114 0, #0f0b07 60%, #050403 100%); }
+    .art-sai .brand-logo { border: 3px solid #d4a54f; box-shadow: 0 0 40px rgba(212, 165, 79, .4); }
+    .art-sai h3 { background: linear-gradient(135deg, #fff1c4, #f3d58e 30%, #d4a54f 60%, #9c6e24); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .art-gk h3 { background: linear-gradient(135deg, #f3dc9d, #d4a94f 45%, #a87a2a); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .branch-body { padding: 24px 26px 28px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
     .branch-body p { color: var(--muted); font-size: .95rem; }
@@ -159,10 +163,11 @@
     .copyright { margin-top: 18px; font-size: .8rem; opacity: .7; }
 
     /* ---------- Follow on Instagram ---------- */
-    .follow { margin: 0 auto 30px; max-width: 900px; }
+    .follow { margin: 0 auto 30px; max-width: 1060px; }
     .follow h3 { font-size: 1.5rem; margin-bottom: 18px; color: var(--follow-ink); }
-    .follow-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    @media (max-width: 640px) { .follow-grid { grid-template-columns: 1fr; } }
+    .follow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    @media (max-width: 900px) { .follow-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .follow-grid { grid-template-columns: 1fr; } }
     .follow-card { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 20px 16px; border-radius: 16px; background: var(--follow-card); border: 1px solid var(--follow-line); text-decoration: none; text-align: center; transition: transform .2s, border-color .2s; }
     .follow-card:hover { transform: translateY(-3px); border-color: #d6249f; }
     footer .follow-card img { width: 72px; height: 72px; margin: 0; border-radius: 50%; object-fit: cover; flex: none; border: 1px solid var(--follow-line); background: #fff; }
@@ -238,10 +243,20 @@
           </div>
         </a>
 
-        <div class="branch soon">
-          <h3 class="bronze-text">More coming soon</h3>
-          <p>URAB keeps growing. New handmade and heartfelt brands will join the family here.</p>
-        </div>
+        <a class="branch" href="/sai-clicks">
+          <div class="branch-art art-sai">
+            <img class="brand-logo" src="/images/sai-clicks/logo-round.jpg" alt="Sai Clicks logo" loading="lazy">
+            <div>
+              <h3>Sai Clicks</h3>
+              <div class="te">Fashion • Events • Portraits</div>
+            </div>
+          </div>
+          <div class="branch-body">
+            <p>Fashion, wedding and portrait photography in Hyderabad by Purnasai, capturing your special moments.</p>
+            <div class="tags"><span>Fashion</span><span>Weddings</span><span>Portraits</span><span>Events</span></div>
+            <span class="branch-cta">Visit Sai Clicks</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -348,6 +363,7 @@
       <div class="footer-links">
         <a href="/naa-cheti-kala">Naa Cheti Kala</a>
         <a href="/gk-signature/">GK Signature Events • Decors</a>
+        <a href="/sai-clicks">Sai Clicks</a>
       </div>
       <div class="follow">
         <h3>Follow us on Instagram</h3>
@@ -355,6 +371,7 @@
           <a class="follow-card" href="https://www.instagram.com/urabindia/" target="_blank" rel="noopener"><img class="dark" src="/images/logo.png" alt="URAB logo" loading="lazy"><div><strong>URAB</strong><small>@urabindia</small></div><span class="ig-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor"/></svg>Follow</span></a>
           <a class="follow-card" href="https://www.instagram.com/naa_cheti_kala/" target="_blank" rel="noopener"><img src="/images/naa-cheti-kala/logo.jpg" alt="Naa Cheti Kala logo" loading="lazy"><div><strong>Naa Cheti Kala</strong><small>@naa_cheti_kala</small></div><span class="ig-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor"/></svg>Follow</span></a>
           <a class="follow-card" href="https://www.instagram.com/gksignatureevents/" target="_blank" rel="noopener"><img src="/images/gk-signature-logo.png" alt="GK Signature Events • Decors logo" loading="lazy"><div><strong>GK Signature Events • Decors</strong><small>@gksignatureevents</small></div><span class="ig-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor"/></svg>Follow</span></a>
+          <a class="follow-card" href="https://www.instagram.com/sai__clicks/" target="_blank" rel="noopener"><img src="/images/sai-clicks/logo-round.jpg" alt="Sai Clicks logo" loading="lazy"><div><strong>Sai Clicks</strong><small>@sai__clicks</small></div><span class="ig-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor"/></svg>Follow</span></a>
         </div>
       </div>
       <p class="copyright">&copy; <span id="year">2026</span> URAB. All rights reserved.</p>

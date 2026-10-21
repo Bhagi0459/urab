@@ -9,7 +9,8 @@
   "redirects": [
     { "source": "/gk-signature", "destination": "/gk-signature/", "permanent": true },
     { "source": "/na-chethi-kala", "destination": "/naa-cheti-kala", "permanent": true },
-    { "source": "/nck", "destination": "/naa-cheti-kala", "permanent": false }
+    { "source": "/nck", "destination": "/naa-cheti-kala", "permanent": false },
+    { "source": "/sai", "destination": "/sai-clicks", "permanent": false }
   ],
   "rewrites": [
     { "source": "/gk-signature/", "destination": "https://gksignature.vercel.app/" },
