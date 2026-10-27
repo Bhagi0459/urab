@@ -224,6 +224,8 @@
     .shutter.open { --hole: 120vmax; pointer-events: none; }
     .shutter.open .iris { transform: rotate(70deg) scale(1.6); opacity: 0; }
     .shutter.open .mark { opacity: 0; }
+    /* Canvas lens intro; the .shutter above is the fallback when canvas is unavailable */
+    .lens { position: fixed; inset: 0; z-index: 200; width: 100%; height: 100%; cursor: pointer; }
     @media (prefers-reduced-motion: reduce) { .hero-slides div, .hero-logo, .scroll-hint { animation: none !important; } .hero-slides div:first-child { opacity: .38; } }
   </style>
 </head>
@@ -235,6 +237,8 @@
       var seen = false;
       try { seen = sessionStorage.getItem('sai-shutter') === '1'; sessionStorage.setItem('sai-shutter', '1'); } catch (e) {}
       if (seen || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+      var cv = document.createElement('canvas'), ctx = cv.getContext && cv.getContext('2d');
+      if (ctx) return lens(cv, ctx);
       var blades = '';
       for (var i = 0; i < 8; i++) {
         blades += '<path transform="rotate(' + (i * 45) + ')" d="M0 -500 L380 -330 L36 -58 Z" fill="url(#bl)" stroke="#d4a54f" stroke-width="2" stroke-opacity=".55"/>';
@@ -260,6 +264,145 @@
       addEventListener('keydown', open, { once: true });
       document.addEventListener('DOMContentLoaded', function () { setTimeout(open, 1100); });
       setTimeout(open, 3500);
+
+      // Canvas lens: an engraved barrel with nine gunmetal aperture blades around the logo. On open the blades
+      // snap shut, the flash fires, then the iris swings wide while the lens zooms past onto the page.
+      function lens(cv, ctx) {
+        var W = window.innerWidth, H = Math.max(window.innerHeight, 320), dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        var S = Math.min(W, H), mx = W / 2, my = H / 2, N = 9, PI = Math.PI;
+        var rh = S * 0.34, rf = S * 0.44, r0 = Math.min(rh * 0.62, 120);
+        cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+        cv.className = 'lens';
+        cv.setAttribute('aria-hidden', 'true');
+        var logo = new Image();
+        logo.src = '/images/sai-clicks/logo-round.jpg';
+
+        // Static barrel, drawn once: grip knurling, gold rings, engraved lettering; the iris housing is cut out.
+        var body = document.createElement('canvas');
+        body.width = cv.width; body.height = cv.height;
+        var b = body.getContext('2d');
+        b.scale(dpr, dpr); b.translate(mx, my);
+        b.fillStyle = '#050403'; b.fillRect(-mx, -my, W, H);
+        var g = b.createRadialGradient(0, 0, rh, 0, 0, rf + S * 0.08);
+        g.addColorStop(0, '#16130f'); g.addColorStop(0.45, '#0b0a08'); g.addColorStop(0.8, '#1f1b16'); g.addColorStop(1, '#050403');
+        b.fillStyle = g; b.beginPath(); b.arc(0, 0, rf + S * 0.08, 0, 2 * PI); b.fill();
+        b.lineWidth = 1;
+        for (var d = 0; d < 360; d += 1.5) {
+          var c = Math.cos(d * PI / 180), s = Math.sin(d * PI / 180);
+          b.strokeStyle = 'rgba(255, 240, 210, ' + (0.04 + 0.06 * Math.max(0, Math.cos(d * PI / 180 + 2.3))) + ')';
+          b.beginPath(); b.moveTo(c * (rf + S * 0.012), s * (rf + S * 0.012)); b.lineTo(c * (rf + S * 0.07), s * (rf + S * 0.07)); b.stroke();
+        }
+        [[rh, 2, 0.8], [rh + S * 0.014, 1, 0.35], [rf, 1.5, 0.6], [rf + S * 0.075, 1, 0.3]].forEach(function (q) {
+          b.beginPath(); b.arc(0, 0, q[0], 0, 2 * PI); b.lineWidth = q[1]; b.strokeStyle = 'rgba(212, 165, 79, ' + q[2] + ')'; b.stroke();
+        });
+        var fs = Math.max(10, S * 0.024), rt = (rh + rf) / 2;
+        b.font = '600 ' + fs + 'px Poppins, sans-serif'; b.textAlign = 'center'; b.textBaseline = 'middle';
+        function arcText(str, mid, bottom, col) {
+          var ws = [], total = 0;
+          for (var i = 0; i < str.length; i++) { ws.push(b.measureText(str[i]).width + fs * 0.2); total += ws[i]; }
+          var a = mid + (bottom ? 1 : -1) * total / rt / 2;
+          b.fillStyle = col;
+          for (i = 0; i < str.length; i++) {
+            a += (bottom ? -1 : 1) * ws[i] / rt / 2;
+            b.save(); b.translate(Math.cos(a) * rt, Math.sin(a) * rt); b.rotate(a + (bottom ? -PI / 2 : PI / 2));
+            b.fillText(str[i], 0, 0); b.restore();
+            a += (bottom ? -1 : 1) * ws[i] / rt / 2;
+          }
+        }
+        arcText('SAI CLICKS  •  FASHION  •  EVENTS  •  PORTRAITS', -PI / 2, false, 'rgba(212, 165, 79, .9)');
+        arcText('HYDERABAD  •  1.4   2   2.8   4   5.6   8   11   16', PI / 2, true, 'rgba(245, 236, 221, .45)');
+        b.globalCompositeOperation = 'destination-out';
+        b.beginPath(); b.arc(0, 0, rh, 0, 2 * PI); b.fill();
+
+        // Aperture blades: each blade's inner edge is tangent to a circle of radius r, so together they leave a nonagon hole.
+        function blades(r, rot) {
+          ctx.save();
+          ctx.beginPath(); ctx.arc(0, 0, rh + 1, 0, 2 * PI); ctx.clip();
+          var s = r * Math.tan(PI / N), far = rh * 2.2;
+          for (var i = 0; i < N; i++) {
+            var al = rot + i * 2 * PI / N, nx = Math.cos(al), ny = Math.sin(al), ux = -ny, uy = nx;
+            var tx = nx * r, ty = ny * r, ax = tx - ux * s, ay = ty - uy * s, bx = tx + ux * far, by = ty + uy * far;
+            var lit = 0.5 + 0.5 * Math.cos(al - 2.3), l1 = 30 + lit * 40 | 0, l2 = 12 + lit * 14 | 0;
+            var gr = ctx.createLinearGradient(tx, ty, tx + nx * rh, ty + ny * rh);
+            gr.addColorStop(0, 'rgb(' + l1 + ',' + (l1 - 4) + ',' + (l1 - 9) + ')');
+            gr.addColorStop(1, 'rgb(' + l2 + ',' + (l2 - 1) + ',' + (l2 - 3) + ')');
+            ctx.beginPath();
+            ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.lineTo(bx + nx * far, by + ny * far); ctx.lineTo(ax + nx * far, ay + ny * far);
+            ctx.closePath();
+            ctx.fillStyle = gr; ctx.shadowColor = 'rgba(0, 0, 0, .65)'; ctx.shadowBlur = 14;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+            ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(tx + ux * rh, ty + uy * rh);
+            ctx.strokeStyle = 'rgba(232, 196, 120, ' + (0.3 + lit * 0.5) + ')'; ctx.lineWidth = 1.4; ctx.stroke();
+          }
+          ctx.restore();
+        }
+        // Front glass: a soft highlight and the violet/green lens-coating reflections.
+        function glass(a) {
+          if (a <= 0) return;
+          ctx.save(); ctx.globalAlpha = a;
+          var hl = ctx.createRadialGradient(-rh * 0.35, -rh * 0.42, 0, -rh * 0.35, -rh * 0.42, rh * 0.7);
+          hl.addColorStop(0, 'rgba(255, 255, 255, .13)'); hl.addColorStop(1, 'rgba(255, 255, 255, 0)');
+          ctx.fillStyle = hl; ctx.beginPath(); ctx.arc(0, 0, rh, 0, 2 * PI); ctx.fill();
+          ctx.lineCap = 'round';
+          ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(150, 110, 230, .3)'; ctx.beginPath(); ctx.arc(0, 0, rh * 0.8, 3.5, 4.3); ctx.stroke();
+          ctx.lineWidth = 2; ctx.strokeStyle = 'rgba(90, 210, 150, .22)'; ctx.beginPath(); ctx.arc(0, 0, rh * 0.86, 0.35, 0.9); ctx.stroke();
+          ctx.restore();
+        }
+
+        var t0 = performance.now(), openAt = 0;
+        function frame(now) {
+          if (!cv.isConnected) return;
+          var t = now - t0, r = r0 * (1 + 0.025 * Math.sin(t / 450)), z = 1, alpha = 1, flash = 0, shut = false;
+          if (openAt) {
+            var o = now - openAt;
+            if (o < 130) { var k = o / 130; r = r0 * (1 - k * k); }
+            else {
+              var k2 = Math.min(1, (o - 130) / 950), e = 1 - Math.pow(1 - k2, 3);
+              shut = true; r = rh * 1.25 * e; z = 1 + 0.9 * e * e;
+              alpha = 1 - Math.max(0, (k2 - 0.45) / 0.55);
+              flash = Math.max(0, 1 - (o - 130) / 380) * 0.85;
+            }
+            if (o > 1100) { cv.remove(); return; }
+          }
+          var rot = -0.35 - (r - r0) / rh * 0.9;
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          ctx.clearRect(0, 0, W, H);
+          ctx.globalAlpha = alpha;
+          ctx.translate(mx, my); ctx.scale(z, z);
+          ctx.drawImage(body, -mx, -my, W, H);
+          if (!shut) {
+            ctx.fillStyle = '#0a0806'; ctx.beginPath(); ctx.arc(0, 0, rh, 0, 2 * PI); ctx.fill();
+            if (logo.complete && logo.naturalWidth) {
+              var D = r0 * 1.8;
+              ctx.save(); ctx.globalAlpha = alpha * Math.min(1, t / 700);
+              ctx.beginPath(); ctx.arc(0, 0, D / 2, 0, 2 * PI); ctx.clip();
+              ctx.drawImage(logo, -D / 2, -D / 2, D, D);
+              ctx.restore();
+            }
+          }
+          blades(r, rot);
+          glass(shut ? 0 : alpha);
+          if (flash > 0) { ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.globalAlpha = flash; ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, W, H); }
+          ctx.globalAlpha = 1;
+          requestAnimationFrame(frame);
+        }
+
+        document.body.appendChild(cv);
+        document.documentElement.style.overflow = 'hidden';
+        requestAnimationFrame(frame);
+        function open() {
+          if (openAt) return;
+          openAt = performance.now();
+          cv.style.pointerEvents = 'none';
+          setTimeout(function () { document.documentElement.style.overflow = ''; }, 140);
+          setTimeout(function () { cv.remove(); }, 1500); // in case frames stall
+        }
+        cv.addEventListener('click', open);
+        addEventListener('keydown', open, { once: true });
+        document.addEventListener('DOMContentLoaded', function () { setTimeout(open, 1100); });
+        setTimeout(open, 3500);
+      }
     })();
   </script>
 
