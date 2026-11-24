@@ -8,12 +8,17 @@
   ],
   "redirects": [
     { "source": "/gk-signature", "destination": "/gk-signature/", "permanent": true },
+    { "source": "/dm-home-bakery", "destination": "/dm-home-bakery/", "permanent": true },
     { "source": "/na-chethi-kala", "destination": "/naa-cheti-kala", "permanent": true },
     { "source": "/nck", "destination": "/naa-cheti-kala", "permanent": false },
-    { "source": "/sai", "destination": "/sai-clicks", "permanent": false }
+    { "source": "/sai", "destination": "/sai-clicks", "permanent": false },
+    { "source": "/dm", "destination": "/dm-home-bakery/", "permanent": false },
+    { "source": "/bakery", "destination": "/dm-home-bakery/", "permanent": false }
   ],
   "rewrites": [
     { "source": "/gk-signature/", "destination": "https://gksignature.vercel.app/" },
-    { "source": "/gk-signature/:path*", "destination": "https://gksignature.vercel.app/:path*" }
+    { "source": "/gk-signature/:path*", "destination": "https://gksignature.vercel.app/:path*" },
+    { "source": "/dm-home-bakery/", "destination": "https://dm-home-bakery.vercel.app/" },
+    { "source": "/dm-home-bakery/:path*", "destination": "https://dm-home-bakery.vercel.app/:path*" }
   ]
 }
